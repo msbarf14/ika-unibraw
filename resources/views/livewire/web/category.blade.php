@@ -43,14 +43,6 @@
 
                 <div class="col-span-12 mt-8 text-center">
                     {{ $news->links() }}
-                    {{-- <Pagination
-                        size="md"
-                        :params="filters"
-                        :links="news?.links"
-                        :prev="news?.prev"
-                        :next="news?.next"
-                        :only="['news', 'filters', 'inertiajs']"
-                    /> --}}
                 </div>
             </div>
         </div>

@@ -8,12 +8,17 @@
                     </div>
                 </div>
                 <div class="pt-6 space-y-6">
-                    @foreach (range(0, 4) as $item)
+                    @foreach ($collaboration as $item)
                         <div>
-                            <p class="text-gray-700">JANUARI 2024</p>
-                            <a href="#"
-                                class="text-lg font-semibold hover:text-brand-primary hover:underline">Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit.</a>
+                            <div class="flex items-center text-gray-400">
+                                <x-filament::icon
+                                    icon="heroicon-o-calendar-days"
+                                    class="w-5 h-5 mr-2"
+                                />
+                                <time>{{ $item['published_at']->isoFormat('dddd, DD MMMM Y') }}</time>
+                            </div>
+                            <a href="{{ route('post', $item['slug']) }}"
+                                class="text-lg font-semibold hover:text-brand-primary hover:underline">{{$item['title']}}</a>
                         </div>
                     @endforeach
                 </div>
@@ -25,12 +30,17 @@
                     </div>
                 </div>
                 <div class="pt-6 space-y-6">
-                    @foreach (range(0, 4) as $item)
+                    @foreach ($careers as $item)
                         <div>
-                            <p class="text-gray-700">JANUARI 2024</p>
-                            <a href="#"
-                                class="text-lg font-semibold hover:text-brand-primary hover:underline">Lorem ipsum dolor
-                                sit amet consectetur adipisicing elit.</a>
+                            <div class="flex items-center text-gray-400">
+                                <x-filament::icon
+                                    icon="heroicon-o-calendar-days"
+                                    class="w-5 h-5 mr-2"
+                                />
+                                <time>{{ $item['published_at']->isoFormat('dddd, DD MMMM Y') }}</time>
+                            </div>
+                            <a href="{{ route('post', $item['slug']) }}"
+                                class="text-lg font-semibold hover:text-brand-primary hover:underline">{{$item['title']}}</a>
                         </div>
                     @endforeach
                 </div>

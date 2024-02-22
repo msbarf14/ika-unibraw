@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Blog;
 
 use App\Filament\Resources\Blog\PostResource\Pages;
 use App\Filament\Resources\Blog\PostResource\Widgets\PostsStats;
+use App\Models\Blog\Category;
 use App\Models\Blog\Post;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -34,7 +35,7 @@ class PostResource extends Resource
                 Forms\Components\Grid::make(6)->schema([
                     Forms\Components\Grid::make(1)->schema([
                         Forms\Components\TextInput::make('title')
-                            ->live(debounce: 300)
+                            ->live(debounce: 1000)
                             ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state))),
                         Forms\Components\TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')
@@ -100,6 +101,8 @@ class PostResource extends Resource
                         <div class="text-xs text-gray-500">{$record->slug}</div>
                     BLADE))
                     ->sortable(),
+                Tables\Columns\TextColumn::make('category.name')
+                    ->badge(),
                 Tables\Columns\TextColumn::make('status')
                     ->badge()
                     ->colors([
@@ -123,7 +126,11 @@ class PostResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: false),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('category_id')
+                    ->label('Kategori')
+                    ->options(Category::query()->pluck('name', 'id'))
+                    ->searchable()
+                    ->native(false)
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
