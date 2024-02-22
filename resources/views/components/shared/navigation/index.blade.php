@@ -6,20 +6,15 @@
         }"
         class="relative bg-brand-primary"
     >
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 sm:px-6 md:space-x-10">
+        <div class="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 md:space-x-10">
 
             {{-- Logo --}}
             <div>
                 <a href="/" class="flex text-black">
-                    <div class="flex space-x-2 items-center">
-                        {{-- <x-shared.logo class="w-auto h-8 md:hidden sm:h-10 lg:inline" /> --}}
-                        <img src="{{asset('logo_ika_brawijaya.png')}}" alt="" class="w-auto h-8 md:hidden sm:h-14 lg:inline">
+                    <div class="flex items-center space-x-2">
+                        <img src="{{asset('logo_ika_brawijaya.png')}}" alt="" class="w-auto h-8 sm:h-14 lg:inline">
                         <span class="font-bold text-white">IKATAN ALUMNI <br> UNIVERSITAS BRAWIJAYA</span>
                     </div>
-                    <x-shared.logo
-                        class="hidden w-auto h-8 sm:h-10 md:block lg:hidden"
-                        icon-only
-                    />
                 </a>
             </div>
 
@@ -83,7 +78,7 @@
                                     <span>{{ $navigation['name'] }}</span>
                                     <x-filament::icon
                                         icon="heroicon-o-chevron-down"
-                                        class="w-4 h-4 ml-2  group-hover:text-brand-blue/80"
+                                        class="w-4 h-4 ml-2 group-hover:text-brand-blue/80"
                                         x-bind:class="open? 'text-brand-blue' : 'text-white'"
                                     />
                                 </button>
