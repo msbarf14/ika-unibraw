@@ -24,6 +24,8 @@ class EntryResource extends Resource
     protected static ?string $navigationIcon = 'carbon-chat-launch';
 
     protected static ?string $navigationGroup = 'Guest Books';
+    protected static bool $shouldRegisterNavigation = false;
+
 
     public static function form(Form $form): Form
     {

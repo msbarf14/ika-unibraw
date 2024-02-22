@@ -29,6 +29,7 @@ class PicResource extends Resource
     protected static ?string $navigationIcon = 'carbon-user-admin';
 
     protected static ?string $navigationGroup = 'Guest Books';
+    protected static bool $shouldRegisterNavigation = false;
 
     #[Rule('required')]
     public $nama = '';

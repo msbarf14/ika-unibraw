@@ -21,6 +21,7 @@ class BusinessResource extends Resource
     protected static ?int $navigationSort = 4;
 
     protected static ?string $navigationIcon = 'carbon-portfolio';
+    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {

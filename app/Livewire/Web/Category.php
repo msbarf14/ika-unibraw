@@ -16,11 +16,11 @@ class Category extends Component
     #[Layout('components.layouts.web')]
     #[Title('Berita dan Informasi Terkini')]
 
-    public $categoryId;
+    public BlogCategory $category;
     
     public function mount(BlogCategory $category)
     {
-        $this->categoryId = $category->id;
+        $this->category = $category;
     }
     
     public function render()
@@ -28,8 +28,9 @@ class Category extends Component
         return view('livewire.web.category', 
         [
             'news' => Post::latest('published_at')
-                ->where('category_id', $this->categoryId)
+                ->where('category_id', $this->category->id)
                 ->paginate(12),
+            'category' => $this->category
         ]);
     }
 

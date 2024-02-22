@@ -9,7 +9,7 @@
                 <h1>
                     <span
                         class="block mt-2 text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl"
-                        >Berita dan Informasi Terkini</span
+                        >{{$category['name']}}</span
                     >
                 </h1>
             </div>

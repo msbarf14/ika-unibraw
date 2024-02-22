@@ -24,7 +24,7 @@ class CollectionResource extends Resource
 
     protected static ?string $navigationGroup = 'Form';
 
-    protected static bool $shouldRegisterNavigation = true;
+    protected static bool $shouldRegisterNavigation = false;
 
     /**
      * @return array<NavigationItem>
