@@ -1,12 +1,10 @@
-<div class="bg-brand-primary text-white py-28 px-4 sm:px-6" id="contact">
+<div class="px-4 text-white bg-brand-primary py-28 sm:px-6" id="contact">
     <div class="grid max-w-6xl grid-cols-12 gap-8 mx-auto">
         <div class="col-span-12 text-lg lg:col-span-6">
             {{-- <x-shared.logo class="h-8" /> --}}
             <div class="mt-8">
                 <div class="max-w-lg">
-                    Jl. Teuku Umar, Karang
-                    Asam Ulu, Kec. Sungai Kunjang, Kota Samarinda,
-                    Kalimantan Timur 75243
+                    Jl. Veteran No.16 A, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
                 </div>
 
                 <div class="flex items-center mt-6">
@@ -67,7 +65,7 @@
                 }
             })"
         >
-            <div class="text-2xl text-brand-primary font-bold">Hubungi Kami</div>
+            <div class="text-2xl font-bold text-brand-primary">Hubungi Kami</div>
 
             <form wire:submit.prevent="submit">
                 <div class="mt-8">
@@ -109,7 +107,7 @@
                     />
                 </div>
 
-                <div x-cloak x-show="time.message" x-text="time.message" class="-mb-8 mt-8 text-red-500"></div>
+                <div x-cloak x-show="time.message" x-text="time.message" class="mt-8 -mb-8 text-red-500"></div>
                 <div 
                     class="flex justify-between mt-8"
                 >
@@ -137,7 +135,7 @@
                         wire:loading.class="opacity-50"
                         wire:target="submit"
                     >
-                        <x-filament::loading-indicator wire:loading wire:target="submit" class="h-5 w-5 mr-3" />
+                        <x-filament::loading-indicator wire:loading wire:target="submit" class="w-5 h-5 mr-3" />
                         Kirim
                     </button>
                 </div>
