@@ -74,9 +74,9 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
             ->font('DM Sans')
             ->favicon(asset('favicon.png'))
-            // ->brandLogo(new HtmlString(Blade::render(<<<'HTML'
-            //     <x-shared.logo class="h-full" />
-            // HTML)))
+            ->brandLogo(new HtmlString(Blade::render(<<<'HTML'
+                <x-shared.logo class="h-full" />
+            HTML)))
             ->brandLogoHeight('2rem')
             ->renderHook('panels::styles.before', fn (): string => Blade::render(<<<'HTML'
                 <style>

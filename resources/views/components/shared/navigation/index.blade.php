@@ -12,7 +12,7 @@
             <div>
                 <a href="/" class="flex text-black">
                     <div class="flex items-center space-x-2">
-                        <img src="{{asset('logo_ika_brawijaya.png')}}" alt="" class="w-auto h-8 sm:h-14 lg:inline">
+                        <img src="{{asset('logo_ika_brawijaya.png')}}" alt="" class="w-auto h-20 sm:h-18 lg:inline">
                         <span class="font-bold text-white">IKATAN ALUMNI <br> UNIVERSITAS BRAWIJAYA</span>
                     </div>
                 </a>
