@@ -1,10 +1,10 @@
 <div>
     <x-shared.navigation />
-    <div class="max-w-7xl mx-auto xl:pt-10">
-        <x-shared.slider />
-    </div>
+    <x-shared.slider />
     <x-shared.news class="py-6"/>
-    <x-shared.collaboration />
+    {{-- <x-shared.collaboration /> --}}
+    <x-shared.about />
+    <x-shared.mail-subscribe />
     <livewire:web.contact />
     <x-shared.footer />
 </div>

@@ -30,17 +30,17 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             @foreach ($sliders as $slider)
-            <div class="swiper-slide relative overflow-hidden xl:rounded-2xl">
-                <img class="object-cover w-full h-[30rem] " src="{{ $slider['background'] }}" alt="{{ $slider['title'] }}" />
-                {{-- <div class="absolute inset-0 bg-black/30">&nbsp;</div>
+            <div class="swiper-slide relative overflow-hidden">
+                <img class="object-cover w-full h-[40rem] " src="{{ $slider['background'] }}" alt="{{ $slider['title'] }}" />
+                <div class="absolute inset-0 bg-black/40">&nbsp;</div>
                 <div class="absolute inset-0 z-10 flex items-center my-full text-white">
                     <div class="flex items-center justify-center max-w-xs px-4 mx-auto md:max-w-2xl lg:max-w-5xl sm:px-6">
-                        <div class="w-1/2">
+                        {{-- <div class="w-1/2">
                             <div class="max-w-lg mx-auto">
                                 <img src="{{ $slider['illustration'] }}" alt="{{ $slider['title'] }}" class="w-full" />
                             </div>
-                        </div>
-                        <div class="w-1/2 lg:pl-4">
+                        </div> --}}
+                        <div class="lg:pl-4">
                             <div class="text-xl leading-5 md:text-2xl font-bold md:leading-tight lg:text-4xl line-clamp-3 backdrop-blur-sm md:backdrop-blur-none">{{ $slider['title'] }}</div>
                             <div class="text-[#F8F8F8] hidden md:block max-w-xs lg:max-w-md pr-5 text-lg mt-4">{{ $slider['description'] }}</div>
                             <div class="mt-4 md:mt-8">
@@ -48,7 +48,7 @@
                                     $external = $slider['type'] === 'external';
                                 @endphp
             
-                                <a 
+                                {{-- <a 
                                     href="{{ $slider['link'] }}" 
                                     target="{{ $external? '_blank' : '_self' }}"
                                     @class([
@@ -63,11 +63,11 @@
                                         icon="heroicon-o-arrow-small-right"
                                         class="w-5 h-5 ml-3 -mr-1"
                                     />
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
             </div>
             @endforeach
         </div>

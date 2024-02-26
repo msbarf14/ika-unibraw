@@ -1,6 +1,6 @@
-<div class="bg-slate-50 relative overflow-hidden">
+<div class=" relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-10 lg:px-0 relative z-10">
-        <div class="bg-gray-100 border-x-2 rounded-t-xl border-brand-primary/70 py-10 px-10 grid grid-cols-1 lg:grid-cols-2">
+        <div class="bg-white py-10 px-10 lg:px-0 grid grid-cols-1 lg:grid-cols-2">
             <div class="w-full">
                 <div class="flex justify-center">
                     <div class="border-b-4 border-brand-primary w-1/4 pb-2">

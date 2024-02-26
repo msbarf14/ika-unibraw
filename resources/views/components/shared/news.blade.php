@@ -17,16 +17,11 @@
                         <time>{{ $post['published_at']->isoFormat('dddd, DD MMMM Y') }}</time>
                     </div>
                 </div>
-                <div class="mt-8 text-lg font-bold text-brand-blue">
-                    @foreach ($post['tags'] as $tag)
-                        <span>{{ $tag }}</span>
-                    @endforeach
-                </div>
-                <a href="{{ route('post', $post['slug']) }}">
-                    <div class="mt-4 text-2xl font-bold hover:text-gray-600">{{ $post['title'] }}</div>
+
+                <a href="{{ route('post', $post['slug']) }}" >
+                    <div class="mt-4 text-2xl font-bold line-clamp-2 hover:text-gray-600">{{ $post['title'] }}</div>
                 </a>
             </div>
-            
         @endforeach
         <div class="col-span-12 mt-8 text-center">
             <a 
