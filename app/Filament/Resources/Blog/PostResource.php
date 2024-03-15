@@ -75,9 +75,13 @@ class PostResource extends Resource
                                 ->native(false)
                                 ->hidden(fn (Get $get) => $get('published') === false),
                             Forms\Components\Toggle::make('published')
+                                ->inlineLabel()
                                 ->live()
                                 ->afterStateHydrated(fn (Toggle $component, ?Model $record, ?string $operation) => $component->state(($operation === 'create' ? true : ($record?->published_at ? true : false))))
                                 ->afterStateUpdated(fn (Set $set, bool $state) => $set('published_at', $state ? now()->startOfDay() : null)),
+                            Forms\Components\Toggle::make('is_pin')
+                                ->label('Pin Post')
+                                ->inlineLabel()
                         ])->columns(1)
                             ->extraAttributes([
                                 'class' => 'dark:bg-white/5',

@@ -29,6 +29,7 @@ class Post extends Model implements HasMedia
         'category_id',
         'content',
         'tags',
+        'is_pin',
         'published_at',
     ];
 

@@ -10,20 +10,40 @@ use Illuminate\View\Component;
 class News extends Component
 {
     protected $news;
+    protected $pin;
 
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        $this->news = Post::latest('published_at')->take(3)->get()->transform(fn ($post) => [
-            'id' => $post->ulid,
-            'slug' => $post->slug,
-            'title' => $post->title,
-            'tags' => $post->tags,
-            'image' => $post->img_url,
-            'published_at' => $post->published_at
-        ]);
+        $this->news = Post::latest('published_at')
+            ->where('is_pin', 0)
+            ->take(3)
+            ->get()
+            ->transform(fn ($post) => [
+                'id' => $post->ulid,
+                'slug' => $post->slug,
+                'title' => $post->title,
+                'content' => $post->content,
+                'tags' => $post->tags,
+                'image' => $post->img_url,
+                'published_at' => $post->published_at
+            ]);
+
+        $this->pin = Post::latest('published_at')
+            ->where('is_pin', 1)
+            ->take(1)
+            ->get()
+            ->transform(fn ($post) => [
+                'id' => $post->ulid,
+                'slug' => $post->slug,
+                'title' => $post->title,
+                'content' => $post->content,
+                'tags' => $post->tags,
+                'image' => $post->img_url,
+                'published_at' => $post->published_at
+            ]);
     }
 
     /**
@@ -33,6 +53,7 @@ class News extends Component
     {
         return view('components.shared.news', [
             'news' => $this->news,
+            'pin' => $this->pin
         ]);
     }
 }
