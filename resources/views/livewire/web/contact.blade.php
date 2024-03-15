@@ -1,4 +1,4 @@
-<div class="px-4 text-white bg-brand-primary py-28 sm:px-6" id="contact">
+<div class="px-4 text-white bg-brand-secondary py-28 sm:px-6" id="contact">
     <div class="grid max-w-6xl grid-cols-12 gap-8 mx-auto">
         <div class="col-span-12 text-lg lg:col-span-6">
             {{-- <x-shared.logo class="h-8" /> --}}

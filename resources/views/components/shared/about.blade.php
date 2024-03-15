@@ -1,34 +1,96 @@
 <div>
-    <div class="relative bg-brand-primary">
-        <div class="relative h-80 overflow-hidden md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
-            <img class="h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1565034946487-077786996e27?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="">
-            <svg viewBox="0 0 926 676" aria-hidden="true"
-                class="absolute -bottom-24 left-24 w-[57.875rem] transform-gpu blur-[118px]">
-                <path fill="url(#60c3c621-93e0-4a09-a0e6-4c228a0116d8)" fill-opacity=".4"
-                    d="m254.325 516.708-90.89 158.331L0 436.427l254.325 80.281 163.691-285.15c1.048 131.759 36.144 345.144 168.149 144.613C751.171 125.508 707.17-93.823 826.603 41.15c95.546 107.978 104.766 294.048 97.432 373.585L685.481 297.694l16.974 360.474-448.13-141.46Z" />
-                <defs>
-                    <linearGradient id="60c3c621-93e0-4a09-a0e6-4c228a0116d8" x1="926.392" x2="-109.635"
-                        y1=".176" y2="321.024" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#776FFF" />
-                        <stop offset="1" stop-color="#FF4694" />
-                    </linearGradient>
-                </defs>
-            </svg>
-        </div>
-        <div class="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
-            <div class="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
-                <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Tentang Ikatan Alumni</p>
-                <p class="mt-6 text-base leading-7 text-gray-300">Universitas Brawijaya (UB) didirikan oleh Presiden
-                    Republik Indonesia melalui kawat no. 258/K/61 dikirim pada tanggal 11 Juli 1961. Nama Brawijaya ini
-                    diambil dari gelar Raja-Raja Majapahit, sebuah kerajaan besar di Indonesia dari abad ke-12 hingga
-                    ke-15. Kemudian, UB berubah status menjadi universitas negeri pada tanggal 5 Januari 1963, menyusul
-                    Keputusan Presiden yang dikeluarkan pada awal tahun yang sama.</p>
-                <div class="mt-8">
-                    <a href="/profil-ikatan-alumni-universitas-brawijaya"
-                        class="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Selengkapnya..</a>
+    <div class="relative min-h-[40dvh]"
+        style="background-image: url('https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?q=80&w=3733&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-size: cover;background-position: bottom;">
+        <div class="absolute bg-gradient-to-l from-brand-secondary to-brand-secondary/90 h-full w-full "></div>
+        <div class="relative z-10 min-h-[40dvh] max-w-7xl px-10 mx-auto py-10 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div class="text-white h-full  flex flex-col justify-center">
+                <h3 class="text-lg lg:text-2xl xl:text-3xl italic">Tentang</h3>
+                <h1 class="text-2xl lg:text-4xl xl:text-5xl font-bold">IKATAN ALUMNI</h1>
+                <h1 class="text-2xl lg:text-4xl xl:text-5xl font-bold">UNIV. BRAWIJAYA</h1>
+                <h3 class=" text-lg lg:text-2xl xl:text-3xl">Kalimantan Timur</h3>
+            </div>
+            <div class="h-full  flex flex-col justify-center">
+                <div class="text-white text-lg lg:text-lg xl:text-xl leading-relaxed space-y-4">
+                    <p>
+                        In a groundbreaking development, a team of scientists has successfully engineered a novel
+                        nanomaterial capable of purifying contaminated water with unprecedented efficiency. This
+                        innovative
+                        technology, inspired by natural biological processes, utilizes a combination of nanotubes and
+                        biomimetic structures to filter out pollutants, heavy metals, and pathogens at a molecular
+                        level.
+                    </p>
+                    <p>Not only does this advance offer a sustainable solution to address water scarcity and pollution
+                        challenges, but it also holds immense promise for communities worldwide grappling with access to
+                        clean and safe drinking water. With further research and refinement, this nanomaterial could
+                        revolutionize water treatment systems, providing a lifeline to millions and heralding a new era
+                        of
+                        environmental stewardship.</p>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative bg-brand-primary">
+        <div class="max-w-7xl mx-auto py-10">
+            <div class="flex justify-between">
+                <div class="text-white">
+                    <div class="flex space-x-4 items-center w-[20rem]">
+                        <x-filament::icon icon="heroicon-o-cursor-arrow-ripple" class="w-24 h-24" />
+                        <div>
+                            <h1 class="font-bold text-2xl">KONSELING</h1>
+                            <p>Hukum, Teknik, Psikolog, Pertanian, Kesehatan, dll</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white">
+                    <div class="flex space-x-4 items-center w-[20rem]">
+                        <x-filament::icon icon="heroicon-o-trophy" class="w-24 h-24" />
+                        <div>
+                            <h1 class="font-bold text-2xl">KERJASAMA</h1>
+                            <p>Peluang Kerjasama, dan Partner
+                                Bersama IKA UB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white">
+                    <div class="flex space-x-4 items-center w-[20rem]">
+                        <x-filament::icon icon="heroicon-o-users" class="w-24 h-24" />
+                        <div>
+                            <h1 class="font-bold text-2xl">KARIR</h1>
+                            <p>Lowongan Kerja, Magang,
+                                PKL, dan Beasiswa</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-0">
+        <div class="mx-auto mt-6 mb-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+            <div class="mb-6">
+                <h3 class="text-3xl italic  text-brand-primary">Informasi</h3>
+                <h3 class="text-4xl font-bold text-brand-primary">Konseling, Kerjasama, Karir</h3>
+            </div>
+            <div class="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+                @for ($i = 0; $i < 9; $i++)
+                    <div class="pt-8 sm:inline-block sm:w-full sm:px-4">
+                        <figure class="rounded-2xl bg-gray-50 p-8 text-sm leading-6">
+                            <blockquote class="text-gray-900">
+                                <p>“Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut
+                                    enim doloremque et ipsam.”</p>
+                            </blockquote>
+                            <figcaption class="mt-6 flex items-center gap-x-4">
+                                <img class="h-10 w-10 rounded-full bg-gray-50"
+                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="">
+                                <div>
+                                    <div class="font-semibold text-gray-900">Leslie Alexander</div>
+                                    <div class="text-gray-600">@lesliealexander</div>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                @endfor
             </div>
         </div>
     </div>
