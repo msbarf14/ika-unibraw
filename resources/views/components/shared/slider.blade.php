@@ -28,20 +28,32 @@
             <!-- Slides -->
             @foreach ($sliders as $slider)
                 <div class="swiper-slide relative overflow-hidden">
-                    <img class="object-cover w-full h-[50rem] " src="{{ $slider['background'] }}"
-                        alt="{{ $slider['title'] }}" />
-                    <div class="absolute inset-0 bg-gradient-to-r from-sky-500">&nbsp;</div>
-                    <div class="absolute inset-0 z-10">
-                        <div class="w-full h-full ">
-                            <div class="max-w-7xl pl-36 h-full  flex flex-col justify-center">
-                                <div
-                                    class="text-xl text-white leading-5 md:text-2xl font-bold md:leading-tight lg:text-4xl line-clamp-3 backdrop-blur-sm md:backdrop-blur-none">
+                    <img class="object-fill lg:object-cover w-full h-[20rem] lg:h-[50rem] "
+                        src="{{ $slider['background'] }}" alt="{{ $slider['title'] }}" />
+                    <div
+                        class="hidden lg:block absolute inset-0 bg-gradient-to-r from-brand-secondary/90 via-brand-secondary/70 to-brand-secondary/50 md:to-brand-secondary/20 ">
+                        &nbsp;</div>
+                    <div class="hidden lg:block absolute inset-0 z-10">
+                        <div class="w-full h-full pl-24">
+                            <div class="max-w-3xl pl-36 h-full flex flex-col justify-center items-start">
+                                <div class="text-lg lg:text-4xl italic text-white leading-8 ">
                                     {{ $slider['title'] }}
                                 </div>
-                                <div
-                                class="text-xl text-white leading-5 md:text-2xl font-bold md:leading-tight lg:text-4xl line-clamp-3 backdrop-blur-sm md:backdrop-blur-none">
-                                {{ $slider['description'] }}
-                            </div>
+                                <div class="text-2xl lg:text-6xl text-white font-bold leading-7">
+                                    {{ $slider['description'] }}
+                                </div>
+                                <div class="mt-4 md:mt-8">
+                                    @php
+                                        $external = $slider['type'] === 'external';
+                                    @endphp
+
+                                    <a href="{{ $slider['link'] }}" target="{{ $external ? '_blank' : '_self' }}"
+                                      class="inline-flex bg-brand-primary text-white items-center px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-lg md:font-medium  border border-transparent rounded shadow-sm hover:shadow-2xl">
+                                        <span>Selengkapnya</span>
+                                        <x-filament::icon icon="heroicon-o-arrow-small-right"
+                                            class="w-5 h-5 ml-3 -mr-1" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

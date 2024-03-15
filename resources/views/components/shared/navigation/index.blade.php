@@ -23,13 +23,17 @@
             <div>
                 <a href="/" class="flex text-black">
                     <div class="flex items-center space-x-2">
-                        <span class="font-bold ">IKATAN ALUMNI <br> UNIVERSITAS BRAWIJAYA</span>
+                        <img src="{{ asset('logo_ika_brawijaya.png') }}" class="w-20 h-20 xl:hidden">
+                        <div>
+                            <p class="text-sm">IKATAN ALUMNI</p>
+                            <p class="font-bold "> UNIVERSITAS BRAWIJAYA</p>
+                        </div>
                     </div>
                 </a>
             </div>
 
             {{-- Main Navigation --}}
-            <div class="relative z-30 hidden md:flex-1 md:flex md:items-center md:justify-end">
+            <div class="relative z-30 hidden lg:flex-1 lg:flex lg:items-center lg:justify-end">
                 <nav class="flex items-center space-x-4">
                     @foreach ($navigations as $index => $navigation)
                         @if (count($navigation['childs']))
@@ -115,7 +119,7 @@
             </div>
 
             {{-- Mobile Nav Icon --}}
-            <div class="-my-2 -mr-2 md:hidden">
+            <div class="-my-2 -mr-2 lg:hidden">
                 <button x-on:click="mobileNav = true"
                     class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-full hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue">
                     <span class="sr-only">Open menu</span>

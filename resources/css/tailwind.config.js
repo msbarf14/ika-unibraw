@@ -26,7 +26,7 @@ export default {
             colors: {
                 brand: {
                     primary: "#023365",
-                    secondary: "#a1a1aa",
+                    secondary: "#0788BF",
                     dark: "#18181b",
                     blue: "#205BA8",
                     orange: "#F15829",

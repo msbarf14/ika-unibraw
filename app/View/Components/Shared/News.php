@@ -16,7 +16,7 @@ class News extends Component
      */
     public function __construct()
     {
-        $this->news = Post::latest('published_at')->take(6)->get()->transform(fn ($post) => [
+        $this->news = Post::latest('published_at')->take(3)->get()->transform(fn ($post) => [
             'id' => $post->ulid,
             'slug' => $post->slug,
             'title' => $post->title,
