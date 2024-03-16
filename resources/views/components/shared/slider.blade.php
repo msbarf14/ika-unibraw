@@ -34,7 +34,7 @@
                         class="hidden lg:block absolute inset-0 bg-gradient-to-r from-brand-secondary/90 via-brand-secondary/70 to-brand-secondary/50 md:to-brand-secondary/20 ">
                         &nbsp;</div>
                     <div class="hidden lg:block absolute inset-0 z-10">
-                        <div class="w-full h-full pl-24 xl:pl-[18rem]">
+                        <div class="w-full h-full pl-24 lg:pl-24 2xl:pl-[18rem]">
                             <div class="max-w-3xl pl-24 h-full flex flex-col justify-center items-start">
                                 <div class="text-lg lg:text-4xl italic text-white leading-8 ">
                                     {{ $slider['title'] }}

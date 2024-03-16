@@ -81,9 +81,9 @@ class Setting extends Page implements HasForms
                     ->schema([
                         Forms\Components\Grid::make(3)->schema([
                             Forms\Components\FileUpload::make('greeting.photo')
-                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk('upcloud')->delete($file))
+                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk('public')->delete($file))
                                 ->image()
-                                ->disk('upcloud')
+                                ->disk('public')
                                 ->optimize('png')
                                 ->downloadable(),
                             Forms\Components\Group::make([
