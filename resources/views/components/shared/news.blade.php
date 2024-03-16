@@ -1,4 +1,4 @@
-<div {{ $attributes->merge(['class' => 'px-4 sm:px-6']) }}>
+<div {{ $attributes->merge(['class' => 'px-10 sm:px-10']) }}>
     <div class="max-w-7xl mx-auto py-6">
         <h3 class="text-3xl italic font-bold text-brand-primary">Berita & Kegiatan</h3>
     </div>

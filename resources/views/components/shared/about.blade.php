@@ -2,7 +2,7 @@
     <div class="relative min-h-[40dvh]"
         style="background-image: url('https://images.unsplash.com/photo-1477281765962-ef34e8bb0967?q=80&w=3733&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');background-size: cover;background-position: bottom;">
         <div class="absolute bg-gradient-to-l from-brand-secondary to-brand-secondary/90 h-full w-full "></div>
-        <div class="relative z-10 min-h-[40dvh] max-w-7xl px-10 mx-auto py-10 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <div class="relative z-10 min-h-[40dvh] max-w-7xl px-10 xl:px-0 mx-auto py-10 grid grid-cols-1 gap-4 lg:grid-cols-2">
             <div class="text-white h-full  flex flex-col justify-center">
                 <h3 class="text-lg lg:text-2xl xl:text-3xl italic">Tentang</h3>
                 <h1 class="text-2xl lg:text-4xl xl:text-5xl font-bold">IKATAN ALUMNI</h1>
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="relative bg-brand-primary">
+    {{-- <div class="relative bg-brand-primary">
         <div class="max-w-7xl mx-auto py-10">
             <div class="flex justify-between">
                 <div class="text-white">
@@ -64,8 +64,8 @@
 
             </div>
         </div>
-    </div>
-    <div class="mx-auto max-w-7xl px-6 lg:px-0">
+    </div> --}}
+    <div class="mx-auto max-w-7xl px-10 lg:px-10 xl:px-0">
         <div class="mx-auto mt-6 mb-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
             <div class="mb-6">
                 <h3 class="text-3xl italic  text-brand-primary">Informasi</h3>
