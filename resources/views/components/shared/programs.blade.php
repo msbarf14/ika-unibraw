@@ -1,5 +1,5 @@
 <div>
-    <div class="relative bg-brand-primary">
+    <div class="relative bg-brand-primary overflow-hidden">
         <div class="max-w-7xl mx-auto py-10 px-10 xl:px-0">
             <div class="flex flex-col md:flex-row justify-between">
                 <div class="text-white">

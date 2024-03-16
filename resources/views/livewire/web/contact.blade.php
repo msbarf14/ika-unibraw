@@ -18,9 +18,6 @@
             <div class="mt-8">
                 <div class="font-bold">Tentang Kami</div>
                 <div class="mt-3 space-y-3">
-                    {{-- <div>
-                        <a class="hover:text-brand-blue" href="#">Sejarah Perusahaan</a>
-                    </div> --}}
                     <div>
                         <a class="hover:text-brand-blue" href="#">Struktur Organisasi</a>
                     </div>
