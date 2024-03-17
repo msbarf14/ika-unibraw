@@ -9,6 +9,7 @@ use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
+use FilamentTiptapEditor\TiptapEditor;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,7 +39,8 @@ class Setting extends Page implements HasForms
                 ...Model::where('key', 'operator')->pluck('value', 'key')->map(fn ($item) => json_decode($item, true))->toArray(),
                 ...Arr::undot(Model::query()
                     ->where('key', 'LIKE', 'whatsapp.%')
-                    ->orWhere('key', 'LIKE', 'greeting.%')
+                    ->orWhere('key', 'LIKE', 'greeting%')
+                    ->orWhere('key', 'LIKE', 'about.%')
                     ->pluck('value', 'key')
                     ->toArray()),
             ]
@@ -77,7 +79,19 @@ class Setting extends Page implements HasForms
                         'class' => 'bg-white dark:bg-gray-800',
                     ]),
 
+                Forms\Components\Fieldset::make('About')
+                    ->schema([
+                        TiptapEditor::make('about.landing')
+                            ->label('Tentang IKA UB')
+                            ->inlineLabel()
+                            ->required()
+                            ->columnSpanFull(),
+                    ])->extraAttributes([
+                        'class' => 'bg-white dark:bg-gray-800',
+                    ]),
+
                 Forms\Components\Fieldset::make('Greeting')
+                    ->label('Sambutan Penasehat')
                     ->schema([
                         Forms\Components\Grid::make(3)->schema([
                             Forms\Components\FileUpload::make('greeting.photo')
@@ -87,15 +101,40 @@ class Setting extends Page implements HasForms
                                 ->optimize('png')
                                 ->downloadable(),
                             Forms\Components\Group::make([
-                                Forms\Components\Textarea::make('greeting.message')
-                                    ->label('Sambutan')
-                                    ->rows(5),
+                                TiptapEditor::make('greeting.message')
+                                    ->label('Sambutan'),
                                 Forms\Components\TextInput::make('greeting.speaker')
                                     ->label('Nama'),
                                 Forms\Components\TextInput::make('greeting.occupation')
                                     ->label('Jabatan'),
                             ])->columns(1)->columnSpan(2),
                         ]),
+
+                    ])
+                    ->columns(1)
+                    ->extraAttributes([
+                        'class' => 'bg-white dark:bg-gray-800',
+                    ]),
+                Forms\Components\Fieldset::make('greeting1')
+                    ->label('Sambutan Ketua')
+                    ->schema([
+                        Forms\Components\Grid::make(3)->schema([
+                            Forms\Components\FileUpload::make('greeting1.photo')
+                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk('public')->delete($file))
+                                ->image()
+                                ->disk('public')
+                                ->optimize('png')
+                                ->downloadable(),
+                            Forms\Components\Group::make([
+                                TiptapEditor::make('greeting1.message')
+                                    ->label('Sambutan'),
+                                Forms\Components\TextInput::make('greeting1.speaker')
+                                    ->label('Nama'),
+                                Forms\Components\TextInput::make('greeting1.occupation')
+                                    ->label('Jabatan'),
+                            ])->columns(1)->columnSpan(2),
+                        ]),
+
                     ])
                     ->columns(1)
                     ->extraAttributes([

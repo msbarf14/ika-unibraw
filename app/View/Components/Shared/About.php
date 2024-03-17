@@ -2,8 +2,10 @@
 
 namespace App\View\Components\Shared;
 
+use App\Models\Setting;
 use Closure;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Component;
 
 class About extends Component
@@ -21,6 +23,14 @@ class About extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.shared.about');
+        return view('components.shared.about', [
+            'about' => Cache::remember('web.about.landing', now()->addSecond(1), function () {
+                $setting = Setting::where('key', 'LIKE', 'about.%')->pluck('value', 'key');
+
+                return [
+                    'message' => $setting['about.landing'] ?? null,
+                ];
+            }),
+        ]);
     }
 }

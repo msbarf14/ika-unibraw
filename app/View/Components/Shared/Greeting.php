@@ -25,25 +25,26 @@ class Greeting extends Component
     public function render(): View|Closure|string
     {
         return view('components.shared.greeting', [
-            'greet' => Cache::remember('web.settings.greeting', now()->addMinutes(3), function () {
-                $setting = Setting::where('key', 'LIKE', 'greeting.%')->pluck('value', 'key');
-
+            'greet' => Cache::remember('web.settings.greeting', now()->addMinute(3), function () {
+                $setting = Setting::where('key', 'LIKE', 'greeting%')->pluck('value', 'key');
+                
+                // penasehat
                 $photoPath = $setting['greeting.photo'] ?? '';
+                // ketua
+                $photoPath1 = $setting['greeting1.photo'] ?? '';
 
                 $disk = Storage::disk('public')->exists($photoPath) ? 'public' : 'upcloud';
-
-                /**
-                 * @var Storage $storage
-                 */
                 $storage = Storage::disk($disk);
 
-                $photoUrl = $storage->url($photoPath);
-
                 return [
-                    'photo' => $photoUrl,
-                    'name' => $setting['greeting.speaker'] ?? null,
-                    'occupation' => $setting['greeting.occupation'] ?? null,
-                    'message' => $setting['greeting.message'] ?? null,
+                    'photo-penasehat' => $storage->url($photoPath),
+                    'name-penasehat' => $setting['greeting.speaker'] ?? null,
+                    'occupation-penasehat' => $setting['greeting.occupation'] ?? null,
+                    'message-penasehat' => $setting['greeting.message'] ?? null,
+                    'photo-ketua' => $storage->url($photoPath1),
+                    'name-ketua' => $setting['greeting1.speaker'] ?? null,
+                    'occupation-ketua' => $setting['greeting1.occupation'] ?? null,
+                    'message-ketua' => $setting['greeting1.message'] ?? null,
                 ];
             }),
         ]);

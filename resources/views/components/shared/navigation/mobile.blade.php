@@ -10,7 +10,7 @@
     x-transition:leave="transition duration-100 ease-in"
     x-transition:leave-start="scale-100 opacity-100"
     x-transition:leave-end="scale-95 opacity-0"
-    class="absolute inset-x-0 top-0 z-10 p-2 transition origin-top-right transform md:hidden"
+    class="absolute inset-x-0 top-0 z-10 p-2 transition origin-top-right transform lg:hidden"
     x-on:click.outside="mobileNav = false"
 >
     <div class="bg-white divide-y-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 divide-gray-50">
@@ -21,6 +21,7 @@
                 <a href="/">
                     {{-- <x-shared.logo class="w-auto h-8" /> --}}
                     <span class="font-bold">IKATAN ALUMNI <br> UNIVERSITAS BRAWIJAYA</span>
+                    <p class="text-sm">Kalimantan Timur</p>
                 </a>
                 <div class="-mr-2">
                     <button

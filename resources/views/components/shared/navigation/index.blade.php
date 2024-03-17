@@ -24,9 +24,10 @@
                 <a href="/" class="flex text-black">
                     <div class="flex items-center space-x-2">
                         <img src="{{ asset('logo_ika_brawijaya.png') }}" class="w-20 h-20 xl:hidden">
-                        <div>
+                        <div class="leading-5">
                             <p class="text-sm">IKATAN ALUMNI</p>
                             <p class="font-bold "> UNIVERSITAS BRAWIJAYA</p>
+                            <p class="text-sm">Kalimantan Timur</p>
                         </div>
                     </div>
                 </a>
