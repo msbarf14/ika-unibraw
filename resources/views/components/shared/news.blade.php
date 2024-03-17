@@ -17,13 +17,13 @@
                         <div class="max-w-xl">
                             <div class="mt-8 flex items-center gap-x-4 text-xs">
                                 <time datetime={{ $post['published_at']->isoFormat('dddd, DD MMMM Y') }}" class="text-gray-500">{{ $post['published_at']->isoFormat('dddd, DD MMMM Y') }}</time>
-                                <a href="#"
-                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+                                {{-- <a href="#"
+                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a> --}}
                             </div>
                             <div class="group relative">
                                 <h3
                                     class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                    <a href="#">
+                                    <a href="{{route('post', ['post' => $post['slug']])}}">
                                         <span class="absolute inset-0"></span>
                                        {{$post['title']}}
                                     </a>
@@ -48,14 +48,14 @@
                         </div>
                         <div class="w-full">
                             <div class="flex items-center gap-x-4 text-xs">
-                                <time datetime="2020-03-16" class="text-gray-500">Mar 16, 2020</time>
-                                <a href="#"
-                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
+                                <time datetime={{ $post['published_at']->isoFormat('dddd, DD MMMM Y') }}" class="text-gray-500">{{ $post['published_at']->isoFormat('dddd, DD MMMM Y') }}</time>
+                                {{-- <a href="#"
+                                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a> --}}
                             </div>
                             <div class="group relative max-w-xl">
                                 <h3
                                     class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                                    <a href="#">
+                                    <a href="{{route('post', ['post' => $post['slug']])}}">
                                         <span class="absolute inset-0"></span>
                                        {{$post['title']}}
                                     </a>

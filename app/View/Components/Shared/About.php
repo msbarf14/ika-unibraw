@@ -24,7 +24,7 @@ class About extends Component
     public function render(): View|Closure|string
     {
         return view('components.shared.about', [
-            'about' => Cache::remember('web.about.landing', now()->addSecond(1), function () {
+            'about' => Cache::remember('web.about.landing', now()->addMinute(3), function () {
                 $setting = Setting::where('key', 'LIKE', 'about.%')->pluck('value', 'key');
 
                 return [

@@ -8,11 +8,8 @@
                 <p>Ikatan Alumni Universitas Brawijaya.</p>
                 <p class="text-xs opacity-50">Pengurus Daerah Kalimantan Timur.</p>
             </div>
-            {{-- <div class="text-xs opacity-50">
-                Support By <a href="https://deka.dev/" class="hover:text-[#5C6DFF]" target="_blank">DEKA</a> - Web Application Agency.
-            </div> --}}
         </div>
-        <div class="flex justify-center flex-1 py-5 space-x-8 md:flex-none text-brand-blue">
+        <div class="flex justify-center flex-1 py-5 space-x-8 md:flex-none text-white">
             @foreach ($social_media as $key => $medsos)
                 @php
                     $icon = match ($key) {
@@ -25,7 +22,7 @@
                 @endphp
 
                 @if ($medsos)
-                    <a href="{{ $medsos }}" class="hover:text-brand-blue/80" target="_blank">
+                    <a href="{{ $medsos }}" class="hover:text-white" target="_blank">
                         <x-filament::icon
                             icon="{{ $icon }}"
                             class="w-6 h-6 md:w-5 md:h-5"

@@ -1,29 +1,31 @@
 <div class="px-4 text-white bg-brand-secondary py-28 sm:px-6" id="contact">
     <div class="grid max-w-6xl grid-cols-12 gap-8 mx-auto">
         <div class="col-span-12 text-lg lg:col-span-6">
-            {{-- <x-shared.logo class="h-8" /> --}}
             <div class="mt-8">
                 <div class="max-w-lg">
-                    Jl. Veteran No.16 A, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+                    <h1 class="text-2xl font-bold italic">Kontak </h1>
+
+                    <div class="mt-10">
+                        <h1 class="font-bold">IKATAN ALUMNI UNIVERSITAS BRAWIJAYA</h1>
+                        <p>PENGURUS DAERAH KALIMANTAN TIMUR</p>
+                    </div>
                 </div>
 
-                <div class="flex items-center mt-6">
-                    <x-filament::icon
-                        icon="heroicon-o-envelope"
-                        class="w-5 h-5 mr-3"
-                    />
-                    ub@ub.ac.id
+                <div class="mt-10 max-w-sm">
+                    <p class="italic">Alamat</p>
+                    <p class="font-bold">Sekretariat : JL. Gatot Subroto, Srindit III No. 54 Samarinda 75117</p>
                 </div>
-            </div>
-            <div class="mt-8">
-                <div class="font-bold">Tentang Kami</div>
-                <div class="mt-3 space-y-3">
-                    <div>
-                        <a class="hover:text-brand-blue" href="#">Struktur Organisasi</a>
-                    </div>
-                    <div>
-                        <a class="hover:text-brand-blue" href="#">Visi dan Misi</a>
-                    </div>
+                <div class="mt-10 max-w-sm">
+                    <p class="italic">Instagram</p>
+                    <p class="font-bold">-</p>
+                </div>
+                <div class="mt-10 max-w-sm">
+                    <p class="italic">Whatsapp</p>
+                    <p class="font-bold">-</p>
+                </div>
+                <div class="mt-10 max-w-sm">
+                    <p class="italic">Email</p>
+                    <p class="font-bold">-</p>
                 </div>
             </div>
         </div>
