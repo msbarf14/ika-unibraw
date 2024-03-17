@@ -13,14 +13,16 @@
             <div class="flex justify-center">
                 <div
                     class="h-[10rem] w-[10rem] bg-zinc-100 border border-gray-200 grid place-items-center rounded-b-2xl">
-                    <img src="{{ asset('logo_ika_brawijaya.png') }}" alt="" class="w-full h-auto">
+                    <a href="/">
+                        <img src="{{ asset('logo_ika_brawijaya.png') }}" alt="" class="w-full h-auto">
+                    </a>
                 </div>
             </div>
         </div>
         <div class="flex items-center justify-between px-4 py-4 mx-auto sm:px-6 md:space-x-10 md:px-16 7xl:px-24">
 
             {{-- Logo --}}
-            <div>
+            <div class="relative z-30">
                 <a href="/" class="flex text-black">
                     <div class="flex items-center space-x-2">
                         <img src="{{ asset('logo_ika_brawijaya.png') }}" class="w-20 h-20 xl:hidden">
