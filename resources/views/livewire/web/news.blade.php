@@ -33,7 +33,7 @@
                                 <span>{{ $tag }}</span>
                             @endforeach
                         </div>
-                        <a href="{{ route('post', $item['slug']) }}">
+                        <a href="/news/{{$item['slug']}}">
                             <div class="mt-4 text-2xl font-bold hover:text-gray-600">
                                 {{ $item['title'] }}
                             </div>
