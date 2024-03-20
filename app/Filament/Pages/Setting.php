@@ -83,6 +83,7 @@ class Setting extends Page implements HasForms
                     ->schema([
                         TiptapEditor::make('about.landing')
                             ->label('Tentang IKA UB')
+                            ->profile('simple')
                             ->inlineLabel()
                             ->required()
                             ->columnSpanFull(),
@@ -127,7 +128,8 @@ class Setting extends Page implements HasForms
                                 ->downloadable(),
                             Forms\Components\Group::make([
                                 TiptapEditor::make('greeting1.message')
-                                    ->label('Sambutan'),
+                                    ->label('Sambutan')
+                                    ->profile('simple'),
                                 Forms\Components\TextInput::make('greeting1.speaker')
                                     ->label('Nama'),
                                 Forms\Components\TextInput::make('greeting1.occupation')
