@@ -36,24 +36,26 @@ class PageResource extends Resource
                         Forms\Components\TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')
                             ->image()
-                            ->disk('upcloud')
+                            ->disk('public')
                             ->collection('images')
                             ->preserveFilenames(),
-                        SpatieMediaLibraryFileUpload::make('documents')
-                            ->multiple()
-                            ->disk('upcloud')
-                            ->acceptedFileTypes([
-                                'application/pdf',
-                                'text/plain',
-                                'text/html',
-                                'text/csv',
-                                'application/vnd.ms-excel',
-                                'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                            ])
-                            ->collection('documents')
-                            ->preserveFilenames(),
+                        // SpatieMediaLibraryFileUpload::make('documents')
+                        //     ->multiple()
+                        //     ->disk('upcloud')
+                        //     ->acceptedFileTypes([
+                        //         'application/pdf',
+                        //         'text/plain',
+                        //         'text/html',
+                        //         'text/csv',
+                        //         'application/vnd.ms-excel',
+                        //         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        //     ])
+                        //     ->collection('documents')
+                        //     ->preserveFilenames(),
                         TiptapEditor::make('content')
-                            ->profile('simple'),
+                            ->profile('simple')
+                            ->disk('public')
+                            ->directory('pages'),
                     ])->columnSpan(4),
                     Forms\Components\Fieldset::make()->schema([
                         Forms\Components\Placeholder::make('created_at')
