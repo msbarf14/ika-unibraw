@@ -45,20 +45,20 @@ class SliderResource extends Resource
                         SpatieMediaLibraryFileUpload::make('background')
                             ->disk('public')
                             ->collection('backgrounds'),
-                        SpatieMediaLibraryFileUpload::make('illustration')
-                            ->disk('public')
-                            ->collection('illustrations'),
+                        // SpatieMediaLibraryFileUpload::make('illustration')
+                        //     ->disk('public')
+                        //     ->collection('illustrations'),
                         Forms\Components\Textarea::make('description'),
-                        Forms\Components\Select::make('button_style')
-                            ->default('orange')
-                            ->options([
-                                'orange' => 'Orange',
-                                'blue' => 'Blue',
-                                'blue-2' => 'Blue 2',
-                                'green' => 'Green',
-                                'white' => 'White',
-                                'black' => 'Black',
-                            ]),
+                        // Forms\Components\Select::make('button_style')
+                        //     ->default('orange')
+                        //     ->options([
+                        //         'orange' => 'Orange',
+                        //         'blue' => 'Blue',
+                        //         'blue-2' => 'Blue 2',
+                        //         'green' => 'Green',
+                        //         'white' => 'White',
+                        //         'black' => 'Black',
+                        //     ]),
                     ])->columnSpan(4),
                     Forms\Components\Fieldset::make()->schema([
                         Forms\Components\Placeholder::make('created_at')
