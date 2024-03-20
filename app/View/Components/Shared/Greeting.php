@@ -33,8 +33,8 @@ class Greeting extends Component
                 // ketua
                 $photoPath1 = $setting['greeting1.photo'] ?? '';
 
-                $disk = Storage::disk('public')->exists($photoPath) ? 'public' : 'upcloud';
-                $storage = Storage::disk($disk);
+                // $disk = Storage::disk('public')->exists($photoPath) ? 'public' : 'upcloud';
+                $storage = Storage::disk('public');
 
                 return [
                     'photo-penasehat' => $storage->url($photoPath),
