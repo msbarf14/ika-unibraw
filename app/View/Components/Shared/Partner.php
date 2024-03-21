@@ -18,7 +18,6 @@ class Partner extends Component
     {
         $this->partners = Model::get()->transform(fn ($item) => [
             'name' => $item->name,
-            'logo' => $item->img_url,
             'website' => $item->website,
         ]);
     }

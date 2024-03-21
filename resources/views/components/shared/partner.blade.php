@@ -1,18 +1,20 @@
 <div {{ $attributes->merge(['class' => '']) }}>
-    <div class="max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold text-center md:text-5xl text-[#1A4592]">B2B Trust</h3>
-    </div>
-    <div class="flex flex-wrap justify-center max-w-6xl mx-auto mt-24">
-        @foreach ($partners as $partner)
-            <div class="w-32 mx-8 overflow-hidden md:w-48 aspect-video">
-                @if ($partner['logo'])
-                    <img src="{{ $partner['logo'] }}" alt="{{ $partner['name'] }}" class="object-contain object-center w-full h-full" />
-                @else
-                    <div class="flex items-center justify-center w-full h-full text-2xl font-bold text-center uppercase md:text-4xl">
-                        {{ $partner['name'] }}
-                    </div>
-                @endif
+    <div class="bg-white py-10" style="background-image: url('/assets/dayak_pattern.svg');background-size: contain;">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div
+                class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+                {{-- @foreach ($partners as $partner)
+                    @if ($partner['logo'])
+                        <img class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+                            src="{{ $partner['logo'] }}" alt="Transistor"
+                            width="158" height="48">
+                    @else
+                        <div class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
+                            <h1 class="text-2xl"> {{ $partner['name'] }}</h1>
+                        </div>
+                    @endif
+                @endforeach --}}
             </div>
-        @endforeach
+        </div>
     </div>
 </div>

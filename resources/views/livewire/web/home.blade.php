@@ -7,6 +7,7 @@
     <x-shared.information />
     <x-shared.greeting />
     {{-- <x-shared.mail-subscribe /> --}}
+    <x-shared.partner />
     <livewire:web.contact />
     <x-shared.footer />
 </div>

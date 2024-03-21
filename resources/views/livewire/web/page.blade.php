@@ -18,7 +18,7 @@
                     </div>
                 @endif
             </div>
-            <div class="mx-auto mt-6 prose prose-lg text-gray-500 prose-indigo">
+            <div class="mx-auto mt-6 prose prose-lg leading-relaxed text-gray-500 prose-indigo">
                 {!! $page->content !!}
             </div>
 

@@ -48,11 +48,11 @@ class PartnerResource extends Resource
                                 'class' => 'dark:bg-white/5',
                             ]),
 
+                        // Forms\Components\FileUpload::make('image')
+                        //     ->disk('public')
+                        //     ->image(),
                         SpatieMediaLibraryFileUpload::make('image')
-                            ->disk('upcloud')
-                            ->image()
-                            ->collection('images')
-                            ->preserveFilenames(),
+                            ->disk('public')
 
                     ])->columnSpan(2),
                 ])->columnSpanFull(),
@@ -64,9 +64,10 @@ class PartnerResource extends Resource
         return $table
             ->reorderable('sort')
             ->columns([
-                SpatieMediaLibraryImageColumn::make('image')
-                    ->collection('images')
-                    ->grow(false),
+                // SpatieMediaLibraryImageColumn::make('image')
+                //     ->collection('images')
+                //     ->grow(false),
+                // Tables\Columns\ImageColumn::make('')
                 Tables\Columns\TextColumn::make('name')
                     ->sortable()
                     ->searchable([
