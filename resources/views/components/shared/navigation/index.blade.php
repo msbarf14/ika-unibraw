@@ -89,7 +89,7 @@
                                     <div
                                         class="py-6 min-w-[250px] max-w-md overflow-hidden text-white  shadow-lg bg-brand-blue rounded-lg ring-1 ring-black ring-opacity-5">
                                         @foreach ($navigation['childs'] as $subNavigation)
-                                            <a href="/{{ $subNavigation['url'] }}"
+                                            <a href="{{ $subNavigation['url'] }}"
                                                 class="block px-6 py-2 hover:bg-white/10">
                                                 {{ $subNavigation['name'] }}
                                             </a>
@@ -113,11 +113,11 @@
                             </a>
                         @endif
                     @endforeach
-                    <a href="#"
+                    {{-- <a href="#"
                         class="flex space-x-2 py-2 px-4 rounded-lg hover:bg-green-500 bg-emerald-500 text-white shadow-lg">
                         <span>Donasi</span>
                         <x-filament::icon icon="heroicon-o-envelope-open" class="w-6 h-6" />
-                    </a>
+                    </a> --}}
                 </nav>
             </div>
 

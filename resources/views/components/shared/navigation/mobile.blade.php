@@ -53,7 +53,7 @@
                         {{-- Navigation child --}}
                         @foreach ($navigation['childs'] as $subNavigation)
                             <a
-                                href="/{{ $subNavigation['url'] }}"
+                                href="{{ $subNavigation['url'] }}"
                                 class="flex items-center px-3 py-2 -m-3 rounded-lg hover:bg-gray-50"
                             >
                                 <div class="ml-10 text-base text-gray-900">
