@@ -89,7 +89,7 @@
                                     <div
                                         class="py-6 min-w-[250px] max-w-md overflow-hidden text-white  shadow-lg bg-brand-blue rounded-lg ring-1 ring-black ring-opacity-5">
                                         @foreach ($navigation['childs'] as $subNavigation)
-                                            <a href="{{ $subNavigation['url'] }}"
+                                            <a href="/{{ $subNavigation['url'] }}"
                                                 class="block px-6 py-2 hover:bg-white/10">
                                                 {{ $subNavigation['name'] }}
                                             </a>
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         @else
-                            <a href="{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
+                            <a href="/{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
                                 {{ $navigation['name'] }}
                             </a>
                         @endif
