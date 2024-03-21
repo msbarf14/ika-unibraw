@@ -48,11 +48,9 @@ class PartnerResource extends Resource
                                 'class' => 'dark:bg-white/5',
                             ]),
 
-                        // Forms\Components\FileUpload::make('image')
-                        //     ->disk('public')
-                        //     ->image(),
-                        SpatieMediaLibraryFileUpload::make('image')
+                        Forms\Components\FileUpload::make('image')
                             ->disk('public')
+                            ->image(),
 
                     ])->columnSpan(2),
                 ])->columnSpanFull(),

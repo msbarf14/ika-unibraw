@@ -29,16 +29,6 @@ class Partner extends Model implements HasMedia
         'email',
         'website',
         'address',
+        'image',
     ];
-
-    protected $casts = [
-
-    ];
-
-    public function imgUrl(): Attribute
-    {
-        return Attribute::make(
-            get: fn () => $this->getFirstMediaUrl('images')
-        );
-    }
 }

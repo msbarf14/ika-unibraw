@@ -18,6 +18,7 @@ class Partner extends Component
     {
         $this->partners = Model::get()->transform(fn ($item) => [
             'name' => $item->name,
+            'logo' => env('APP_URL').'/'.'storage/'.$item->image,
             'website' => $item->website,
         ]);
     }
