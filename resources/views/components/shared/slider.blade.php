@@ -31,7 +31,7 @@
             <!-- Slides -->
             @foreach ($sliders as $slider)
                 <div class="swiper-slide relative overflow-hidden">
-                    <img class="object-cover lg:object-cover w-full h-[20rem] lg:h-[50rem] "
+                    <img class="object-cover lg:object-cover w-full h-[20rem] lg:h-[30rem] "
                         src="{{ $slider['background'] }}" alt="{{ $slider['title'] }}" />
                     <div
                         class="hidden lg:block absolute inset-0 bg-gradient-to-r from-brand-secondary/90 via-brand-secondary/70 to-brand-secondary/50 md:to-brand-secondary/20 ">
@@ -39,10 +39,10 @@
                     <div class="hidden lg:block absolute inset-0 z-10">
                         <div class="w-full h-full pl-24 lg:pl-24 2xl:pl-[18rem]">
                             <div class="max-w-3xl pl-24 h-full flex flex-col justify-center items-start">
-                                <div class="text-lg lg:text-4xl italic text-white leading-8 ">
+                                <div class="text-lg lg:text-3xl italic text-white leading-8 ">
                                     {{ $slider['title'] }}
                                 </div>
-                                <div class="text-2xl lg:text-6xl text-white font-bold leading-7">
+                                <div class="text-2xl lg:text-4xl text-white font-bold leading-7">
                                     {{ $slider['description'] }}
                                 </div>
                                 <div class="mt-4 md:mt-8">
