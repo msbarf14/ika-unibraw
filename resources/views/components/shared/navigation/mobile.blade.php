@@ -42,7 +42,7 @@
                 <nav class="grid gap-6">
                     @foreach ($navigations as $navigation)
                         <a
-                            href="/{{ $navigation['url'] }}"
+                            href="{{ $navigation['url'] }}"
                             class="flex items-center p-3 -m-3 rounded-lg"
                         >
                             <div class="ml-4 text-base font-medium text-gray-900">

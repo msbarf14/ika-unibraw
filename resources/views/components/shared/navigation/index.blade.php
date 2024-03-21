@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         @else
-                            <a href="/{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
+                            <a href="{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
                                 {{ $navigation['name'] }}
                             </a>
                         @endif
