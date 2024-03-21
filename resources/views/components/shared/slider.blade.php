@@ -18,6 +18,9 @@
         pagination: {
             el: $refs.pagination,
             clickable: true,
+        },
+        autoplay: {
+            delay: 5000,
         }
     });
 })">

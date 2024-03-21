@@ -61,7 +61,15 @@ class SocialMedia extends Page implements HasForms
                         Forms\Components\TextInput::make('social-media.tiktok')
                             ->inlineLabel()
                             ->columnSpanFull()
-                            ->suffixIcon('si-tiktok')
+                            ->suffixIcon('si-tiktok'),
+                        Forms\Components\TextInput::make('social-media.whatsapp')
+                            ->inlineLabel()
+                            ->columnSpanFull()
+                            ->suffixIcon('si-whatsapp'),
+                        Forms\Components\TextInput::make('social-media.email')
+                            ->inlineLabel()
+                            ->columnSpanFull()
+                            ->suffixIcon('si-gmail'),
                     ])->extraAttributes([
                         'class' => 'bg-white dark:bg-gray-800',
                     ]),

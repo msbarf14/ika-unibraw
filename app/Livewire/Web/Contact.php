@@ -33,7 +33,10 @@ class Contact extends Component
 
     public function render()
     {
-        return view('livewire.web.contact');
+        $settings = Arr::undot(Setting::where('key', 'LIKE', 'social-media.%')->pluck('value', 'key'))['social-media'] ?? [];
+        return view('livewire.web.contact', [
+            "social" => $settings
+        ]);
     }
 
     public function submit()
