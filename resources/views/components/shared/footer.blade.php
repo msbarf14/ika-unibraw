@@ -18,16 +18,17 @@
                         'twitter' => 'carbon-logo-x',
                         'youtube' => 'si-youtube',
                         'tiktok' => 'si-tiktok',
+                        'email' => null,
+                        'whatsapp' => null,
                     };
                 @endphp
 
                 @if ($medsos)
-                    <a href="{{ $medsos }}" class="hover:text-white" target="_blank">
-                        <x-filament::icon
-                            icon="{{ $icon }}"
-                            class="w-6 h-6 md:w-5 md:h-5"
-                        />
-                    </a>
+                    @if ($icon != null)
+                        <a href="{{ $medsos }}" class="hover:text-white" target="_blank">
+                            <x-filament::icon icon="{{ $icon }}" class="w-6 h-6 md:w-5 md:h-5" />
+                        </a>
+                    @endif
                 @endif
             @endforeach
         </div>

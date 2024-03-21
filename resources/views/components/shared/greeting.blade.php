@@ -19,8 +19,9 @@
                         </div>
                     </figcaption>
                     <blockquote class="mt-10 text-lg leading-8 text-gray-900">
-                        <div class="prose prose-base">{!! $greet['message-penasehat'] !!}</div>
+                        <div class="prose prose-base line-clamp-5">{!! $greet['message-penasehat'] !!}</div>
                     </blockquote>
+                    <a href="/arahan-penasehat" class="mt-4">Selengkapnya</a>
                 </figure>
             </div>
             <div
@@ -36,8 +37,9 @@
                         </div>
                     </figcaption>
                     <blockquote class="mt-10  text-lg leading-8 text-gray-900">
-                        <div class="prose prose-base">{!! $greet['message-ketua'] !!}</div>
+                        <div class="prose prose-base line-clamp-5">{!! $greet['message-ketua'] !!}</div>
                     </blockquote>
+                    <a href="/sambutan-ketua-ika-ub-kaltim" class="mt-4">Selengkapnya</a>
                 </figure>
             </div>
         </div>
