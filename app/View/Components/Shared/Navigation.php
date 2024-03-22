@@ -23,12 +23,15 @@ class Navigation extends Component
     {
         $navigations = \App\Models\Navigation::orderBy('sort')->get()->transform(fn ($item) => [
             'name' => $item->name,
+            'type' => $item->page,
             'url' => $item->url,
             'childs' => collect($item->childs)->map(fn ($child) => [
                 'name' => $child['name'],
                 'url' => $child['url'],
+                'type' => $child['type'],
                 'childs' => collect($child['childs'])->map(fn ($child) => [
                     'name' => $child['name'],
+                    'type' => $child['type'],
                     'url' => $child['url'],
                 ]),
             ]),
