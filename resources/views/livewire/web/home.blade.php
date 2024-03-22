@@ -1,6 +1,6 @@
 <div>
     <x-shared.navigation />
-    <div class="max-w-7xl mx-auto mt-10 rounded-xl overflow-hidden">
+    <div class="px-10 xl:px-0 max-w-7xl mx-auto mt-10 rounded-xl overflow-hidden">
         <x-shared.slider />
     </div>
     <x-shared.news class="py-6"/>

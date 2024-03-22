@@ -22,13 +22,13 @@
                 </div>
                 <div class="mt-10 max-w-sm">
                     <p class="italic">Whatsapp</p>
-                    <a href="{{ $social['instagram'] }}" target="_blank"
+                    <a href="https://wa.me/{{ $social['whatsapp'] }}" target="_blank"
                         class="font-bold hover:underline">{{ $social['whatsapp'] }}</a>
 
                 </div>
                 <div class="mt-10 max-w-sm">
                     <p class="italic">Email</p>
-                    <a href="{{ $social['instagram'] }}" target="_blank"
+                    <a href="mailto:{{ $social['email'] }}" target="_blank"
                         class="font-bold hover:underline">{{ $social['email'] }}</a>
 
                 </div>

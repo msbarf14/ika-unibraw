@@ -7,7 +7,7 @@
                         <x-filament::icon icon="heroicon-o-cursor-arrow-ripple" class="w-24 h-24" />
                         <div>
                             <h1 class="font-bold text-2xl">KONSELING</h1>
-                            <p>Hukum, Teknik, Psikolog, Pertanian, Kesehatan, dll</p>
+                            <p>Hukum, Teknik, Sikolog, Pertanian, Kesehatan, dll</p>
                         </div>
                     </div>
                 </div>

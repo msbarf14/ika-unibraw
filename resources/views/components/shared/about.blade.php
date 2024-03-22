@@ -11,7 +11,7 @@
                 <h1 class="mt-10 text-2xl">"Solid Sinergi Jaya"</h1>
             </div>
             <div class="h-full  flex flex-col justify-center">
-                <div class="prose prose-base text-white whitespace-normal leading-relaxed text-lg" >
+                <div class="prose prose-base prose-p:text-justify text-white whitespace-normal leading-relaxed text-lg" >
                     {!! $about['message'] !!}
                 </div>
             </div>

@@ -6,8 +6,12 @@
     }" class="relative bg-white bg-opacity-10 border-b border-gray-200"
         style="background-image: url('/assets/dayak_pattern.svg');background-size: contain;">
 
-        <div class="w-full bg-brand-primary py-7">
-
+        <div class="w-full bg-brand-primary py-7 px-6 flex justify-end">
+            <a href="#"
+                class="flex space-x-2 py-2 px-4 rounded-lg hover:bg-green-500 bg-emerald-500 text-white shadow-lg">
+                <span>Donasi</span>
+                <x-filament::icon icon="heroicon-o-envelope-open" class="w-6 h-6" />
+            </a>
         </div>
         <div class="hidden xl:block absolute w-full  z-20 -top-0">
             <div class="flex justify-center">
@@ -133,11 +137,7 @@
                             @endif
                         @endif
                     @endforeach
-                    {{-- <a href="#"
-                        class="flex space-x-2 py-2 px-4 rounded-lg hover:bg-green-500 bg-emerald-500 text-white shadow-lg">
-                        <span>Donasi</span>
-                        <x-filament::icon icon="heroicon-o-envelope-open" class="w-6 h-6" />
-                    </a> --}}
+
                 </nav>
             </div>
 
