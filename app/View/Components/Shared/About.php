@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Shared;
 
+use App\Models\Banner;
 use App\Models\Setting;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -31,6 +32,7 @@ class About extends Component
                     'message' => $setting['about.landing'] ?? null,
                 ];
             }),
+            'banner' => Banner::where('location', '=', 'landing.banner1')->first()
         ]);
     }
 }
