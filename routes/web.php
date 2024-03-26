@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', \App\Livewire\Web\Home::class);
 Route::get('/web/vidio', \App\Livewire\Web\VideoScreen::class);
 // Route::get('/feature/donasi', Donasi::class)->name('donasi');
+Route::get('/search', \App\Livewire\Web\Search::class)->name('post.search');
 
 Route::get('/news', \App\Livewire\Web\News::class)->name('news');
 Route::get('/news/{post:slug}', \App\Livewire\Web\Post::class)->name('post');
