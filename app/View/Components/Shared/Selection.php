@@ -17,7 +17,6 @@ class Selection extends Component
     {
         $this->news = Post::with('category')
         ->latest('published_at')
-        ->where('is_pin', 0)
         ->whereHas('category', function($query) {
             return $query->where('slug', 'pilihan');
         })
