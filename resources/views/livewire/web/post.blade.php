@@ -1,20 +1,20 @@
 <div>
     @section('meta')
-        <meta name="description" content="{{ $post->title }}">
+        <meta name="description" content="Selengkapnya baca berita di website IKA UB Kaltim.">
         <meta name="keywords" content="{{ implode(', ', $post->tags) }}">
         <meta name="author" content="Admin IKA UB">
 
         <!-- Open Graph Meta Tags (for social media sharing) -->
         <meta property="og:title" content="{{ $post->title }}">
-        <meta property="og:description" content="{{ $post->title }}">
+        <meta property="og:description" content="Selengkapnya baca berita di website IKA UB Kaltim.">
         <meta property="og:image" content="{{ $post->img_url }}">
-        <meta property="og:url" content="https://example.com">
+        <meta property="og:url" content="{{env("APP_URL")}}">
         <meta property="og:type" content="website">
 
         <!-- Twitter Card Meta Tags -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="{{ $post->title }}">
-        <meta name="twitter:description" content="{{ $post->title }}">
+        <meta name="twitter:description" content="Selengkapnya baca berita di website IKA UB Kaltim.">
         <meta name="twitter:image" content="{{ $post->img_url }}">
     @endsection
     <x-shared.navigation />
