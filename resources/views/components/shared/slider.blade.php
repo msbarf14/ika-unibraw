@@ -49,13 +49,14 @@
                                     @php
                                         $external = $slider['type'] === 'external';
                                     @endphp
-
+                                    @if(isset($slider['link']))
                                     <a href="{{ $slider['link'] }}" target="{{ $external ? '_blank' : '_self' }}"
                                       class="inline-flex bg-brand-primary text-white items-center px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-lg md:font-medium  border border-transparent rounded shadow-sm hover:shadow-2xl">
                                         <span>Selengkapnya</span>
                                         <x-filament::icon icon="heroicon-o-arrow-small-right"
                                             class="w-5 h-5 ml-3 -mr-1" />
                                     </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
