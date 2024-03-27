@@ -6,7 +6,7 @@
     <x-shared.news class="py-6"/>
     <x-shared.about />
     <x-shared.selection />
-    <x-shared.programs />
+    {{-- <x-shared.programs /> --}}
     <x-shared.information />
     <x-shared.greeting />
     <x-shared.partner />
