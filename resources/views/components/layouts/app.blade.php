@@ -12,6 +12,8 @@
         <link rel="icon" href="{{ $favicon }}" />
     @endif
 
+    @yield('meta')
+
     <title>
         {{ value(function($title, $siteName){
         if($title)
