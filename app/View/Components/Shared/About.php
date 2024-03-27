@@ -32,7 +32,7 @@ class About extends Component
                     'message' => $setting['about.landing'] ?? null,
                 ];
             }),
-            'banner' => Banner::where('location', '=', 'landing.banner1')->first()
+            'banner' => Banner::where('location', '=', 'landing.banner2')->first()
         ]);
     }
 }

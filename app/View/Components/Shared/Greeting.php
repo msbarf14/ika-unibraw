@@ -2,6 +2,7 @@
 
 namespace App\View\Components\Shared;
 
+use App\Models\Banner;
 use App\Models\Setting;
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -47,6 +48,7 @@ class Greeting extends Component
                     'message-ketua' => $setting['greeting1.message'] ?? null,
                 ];
             }),
+            'banner' => Banner::where('location', '=', 'landing.banner2')->first()
         ]);
     }
 }
