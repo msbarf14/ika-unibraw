@@ -12,12 +12,14 @@
         <link rel="icon" href="{{ $favicon }}" />
     @endif
 
-    <title>{{ value(function($title, $siteName){
+    <title>
+        {{ value(function($title, $siteName){
         if($title)
         return "{$title} - {$siteName}";
         else
         return $siteName;
-        }, $title ?? null, "IKA UNIV. BRAWIJAYA") }}</title>
+        }, $title ?? null, "IKA UNIV. BRAWIJAYA") }}
+    </title>
 
     <style>
         html{

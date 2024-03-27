@@ -94,31 +94,17 @@
                                     <div
                                         class="py-6 min-w-[250px] max-w-md overflow-hidden text-white  shadow-lg bg-brand-blue rounded-lg ring-1 ring-black ring-opacity-5">
                                         @foreach ($navigation['childs'] as $subNavigation)
-                                            @if ($subNavigation['type'] == 'page')
-                                                <a href="/{{ $subNavigation['url'] }}"
-                                                    class="block px-6 py-2 hover:bg-white/10">
-                                                    {{ $subNavigation['name'] }}
-                                                </a>
-                                            @else
-                                                <a href="{{ $subNavigation['url'] }}"
-                                                    class="block px-6 py-2 hover:bg-white/10">
-                                                    {{ $subNavigation['name'] }}
-                                                </a>
-                                            @endif
+                                            <a href="{{ $subNavigation['url'] }}"
+                                                class="block px-6 py-2 hover:bg-white/10">
+                                                {{ $subNavigation['name'] }}
+                                            </a>
                                             @if (count($subNavigation['childs']))
                                                 <div class="px-6 pb-2">
                                                     @foreach ($subNavigation['childs'] as $subNavigationNested)
-                                                        @if ($subNavigationNested['type'] == 'page')
-                                                            <a href="/{{ $subNavigationNested['url'] }}"
-                                                                class="block px-3 py-1 text-sm border-b border-l border-dotted border-white/30 hover:bg-white/10">
-                                                                {{ $subNavigationNested['name'] }}
-                                                            </a>
-                                                        @else
-                                                            <a href="{{ $subNavigationNested['url'] }}"
-                                                                class="block px-3 py-1 text-sm border-b border-l border-dotted border-white/30 hover:bg-white/10">
-                                                                {{ $subNavigationNested['name'] }}
-                                                            </a>
-                                                        @endif
+                                                        <a href="{{ $subNavigationNested['url'] }}"
+                                                            class="block px-3 py-1 text-sm border-b border-l border-dotted border-white/30 hover:bg-white/10">
+                                                            {{ $subNavigationNested['name'] }}
+                                                        </a>
                                                     @endforeach
                                                 </div>
                                             @endif
@@ -127,15 +113,9 @@
                                 </div>
                             </div>
                         @else
-                            @if ($navigation['type'] == 'page')
-                                <a href="/{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
-                                    {{ $navigation['name'] }}
-                                </a>
-                            @else
-                                <a href="{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
-                                    {{ $navigation['name'] }}
-                                </a>
-                            @endif
+                            <a href="{{ $navigation['url'] }}" class="text-base text-black hover:text-brand-blue">
+                                {{ $navigation['name'] }}
+                            </a>
                         @endif
                     @endforeach
 

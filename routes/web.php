@@ -5,7 +5,7 @@ use App\Livewire\Web\Donasi;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', \App\Livewire\Web\Home::class);
-Route::get('/web/vidio', \App\Livewire\Web\VideoScreen::class);
+Route::get('/vidio', \App\Livewire\Web\VideoScreen::class);
 // Route::get('/feature/donasi', Donasi::class)->name('donasi');
 Route::get('/search', \App\Livewire\Web\Search::class)->name('post.search');
 

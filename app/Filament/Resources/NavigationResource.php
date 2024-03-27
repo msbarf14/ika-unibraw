@@ -35,7 +35,7 @@ class NavigationResource extends Resource
                     'url' => 'URL',
                     'path' => 'Path',
                     'page' => 'Page',
-                    'form' => 'Form',
+                    // 'form' => 'Form',
                 ])->live(),
 
             Forms\Components\TextInput::make('url')
