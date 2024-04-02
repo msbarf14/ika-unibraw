@@ -5,7 +5,6 @@ namespace App\Livewire\Web;
 use App\Models\Blog\Post as Model;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Artesaos\SEOTools\Facades\SEOTools;
 class Post extends Component
 {
     public Model $post;
