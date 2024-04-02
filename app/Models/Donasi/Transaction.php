@@ -18,6 +18,7 @@ class Transaction extends Model
         'phone',
         'message',
         'attachment',
+        'amount',
         'paid',
     ];
 

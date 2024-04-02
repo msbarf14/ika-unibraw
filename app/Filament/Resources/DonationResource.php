@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Forms\Components\NumberInput;
 use App\Filament\Resources\DonationResource\Pages;
-use App\Filament\Resources\DonationResource\RelationManagers;
+use App\Filament\Resources\DonationResource\RelationManagers\CampaignRelationManager;
 use App\Models\Donasi\Campaign as Donation;
 use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -115,7 +115,7 @@ class DonationResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CampaignRelationManager::class
         ];
     }
 
@@ -125,7 +125,7 @@ class DonationResource extends Resource
             'index' => Pages\ListDonations::route('/'),
             'view' => Pages\ViewDonation::route('/{record}/detail'),
             // 'create' => Pages\CreateDonation::route('/create'),
-            // 'edit' => Pages\EditDonation::route('/{record}/edit'),
+            'edit' => Pages\EditDonation::route('/{record}/edit'),
         ];
     }
 }
