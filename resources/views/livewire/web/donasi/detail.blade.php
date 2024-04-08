@@ -4,7 +4,7 @@
         <div class="relative px-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-6 lg:grid-cols-6">
                 <div class="col-span-3">
-                    <img src="{{asset($donasi['image'])}}" alt="{{$donasi['title']}}" loading="lazy" class="aspect-video rounded-xl object-cover">
+                    <img src="{{sprintf('/storage/%s', $donasi['image']) }}" alt="{{$donasi['title']}}" loading="lazy" class="aspect-video rounded-xl object-cover">
                     <h1 class="text-xl md:text-2xl mt-6">{{$donasi['title']}}</h1>
                     @if ($donasi['display_amount'])
                         <div class="flex justify-between items-center mt-2">

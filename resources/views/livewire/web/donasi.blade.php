@@ -19,7 +19,7 @@
                             class="overflow-hidden bg-gray-100 rounded-lg aspect-video"
                         >
                             <img
-                                src="{{ asset($item['image']) }}"
+                                src="{{ sprintf('/storage/%s', $item['image']) }}"
                                 alt="{{ $item['title'] }}"
                                 class="object-cover w-full h-full"
                             />
