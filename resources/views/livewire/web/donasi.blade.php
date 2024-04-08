@@ -39,7 +39,7 @@
                                 <p class="text-sm text-gray-500">{{ number_format($item['amount'])}}</p>
                             </div>
                         @endif
-                        <a href="#" class="flex mt-4 justify-center w-full bg-gray-50 border border-gray-400 text-center py-3 rounded-lg">Donasi</a>
+                        <a href="{{route('donasi.detail', ['campaign' => $item['id']])}}" class="flex mt-4 justify-center w-full bg-gray-50 border border-gray-400 text-center py-3 rounded-lg">Donasi</a>
                     </div>
                 @endforeach
                 <div class="col-span-12 mt-8 text-center">

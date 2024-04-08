@@ -22,9 +22,9 @@ class Transaction extends Model
         'paid',
     ];
 
-    protected $casts = [
-        'open' => 'paid',
-    ];
+    // protected $casts = [
+    //     'open' => 'paid',
+    // ];
 
     public function campaign() : BelongsTo
     {

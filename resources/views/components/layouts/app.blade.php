@@ -36,8 +36,7 @@
     <link href="https://fonts.bunny.net/css?family=dm-sans:300,400,500,600,700" rel="stylesheet" />
     @filamentStyles
     @vite([
-        'resources/css/app.css',
-        'resources/js/app.js',
+        'resources/css/app.css'
     ])
     @stack('styles')
 </head>
@@ -45,9 +44,9 @@
 <body>
     {{ $slot }}
 
-    {{-- @livewire('wire-elements-modal') --}}
     @livewire('notifications')
     @filamentScripts
+    @vite('resources/js/app.js')
     @stack('scripts')
     
     <script>

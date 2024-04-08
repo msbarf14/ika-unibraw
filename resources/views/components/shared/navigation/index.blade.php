@@ -8,7 +8,7 @@
 
         <div class=" w-full bg-brand-primary py-7 px-6 flex justify-end space-x-3">
             <livewire:components.search />
-            <a href="/feature/donasi"
+            <a href="/donasi"
                 class="flex relative z-30 space-x-2 py-2 px-4 rounded-lg hover:bg-green-500 bg-emerald-500 text-white shadow-lg">
                 <span>Donasi</span>
                 <x-filament::icon icon="heroicon-o-envelope-open" class="w-6 h-6" />

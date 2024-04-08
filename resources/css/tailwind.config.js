@@ -6,14 +6,11 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 export default {
     presets: [preset],
     content: [
-        // "./app/Filament/**/*.php",
         "./resources/views/filament/**/*.blade.php",
         "./vendor/filament/**/*.blade.php",
         "./app/Livewire/**/*.php",
         "./resources/views/components/**/*.blade.php",
         "./resources/views/livewire/**/*.blade.php",
-        // "./vendor/wire-elements/modal/resources/views/*.blade.php",
-        // "./vendor/wire-elements/modal/src/ModalComponent.php",
     ],
     theme: {
         extend: {
