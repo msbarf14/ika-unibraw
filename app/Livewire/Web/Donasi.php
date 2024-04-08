@@ -18,7 +18,8 @@ class Donasi extends Component
     public function render()
     {
         return view('livewire.web.donasi', [
-            'campaigns' => Campaign::where('open', 1)
+            'campaigns' => Campaign::with('transaction')
+                ->where('open', 1)
                 ->latest()
                 ->paginate(12)
         ]);

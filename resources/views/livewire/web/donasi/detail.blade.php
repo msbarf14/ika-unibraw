@@ -7,20 +7,31 @@
                     <img src="{{asset($donasi['image'])}}" alt="{{$donasi['title']}}" loading="lazy" class="aspect-video rounded-xl object-cover">
                     <h1 class="text-xl md:text-2xl mt-6">{{$donasi['title']}}</h1>
                     @if ($donasi['display_amount'])
-                    <div class="flex justify-between items-center mt-2">
-                        <p class="text-sm text-gray-500">Target</p>
-                        <p class="text-sm text-gray-500">{{ number_format($donasi['amount'])}}</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <p class="text-lg text-gray-500">Target</p>
+                            <p class="text-lg text-gray-500">{{ number_format($donasi['amount'])}}</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-lg text-gray-500">Terkumpul</p>
+                            <p class="text-lg text-green-700 font-medium">{{ number_format($total_amount)}}</p>
+                        </div>
+                    @endif
+                    <div class="mt-6">
+                        {{$donasi['description']}}
                     </div>
-                    <div class="flex justify-between items-center">
-                        <p class="text-sm text-gray-500">Terkumpul</p>
-                        <p class="text-sm text-gray-500">{{ number_format($donasi['amount'])}}</p>
+                    <div class="mt-10 hidden lg:block">
+                        <p class="italic text-gray-600">Ucapan dan do'a</p>
+                        <div class="border py-6 px-4 rounded-lg divide-y divide-dashed">
+                            @foreach ($details as $item)
+                                <div class="py-2">
+                                    <h1 class="font-semibold text-gray-600">{{$item['name']}}</h1>
+                                    <p>Berdonasi sebesar <b>Rp. {{number_format($item['amount'])}}</b></p>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                @endif
-                <div class="mt-6">
-                    {{$donasi['description']}}
                 </div>
-                </div>
-                <div class="col-span-3">
+                <div class=" col-span-3 ">
                     <div class="bg-brand-primary text-white py-8 px-10 rounded-lg">
                         <div class="flex justify-between items-start">
                             <div>
@@ -48,6 +59,17 @@
                        </form>
                     </div>
                    <x-filament-actions::modals />
+                    <div class="mt-10 block lg:hidden">
+                        <p class="italic text-gray-600">Ucapan dan do'a</p>
+                        <div class="border py-6 px-4 rounded-lg divide-y divide-dashed">
+                            @foreach ($details as $item)
+                                <div class="py-2">
+                                    <h1 class="font-semibold text-gray-600">{{$item['name']}}</h1>
+                                    <p>Berdonasi sebesar <b>Rp. {{number_format($item['amount'])}}</b></p>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div> 

@@ -36,7 +36,7 @@
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="text-sm text-gray-500">Terkumpul</p>
-                                <p class="text-sm text-gray-500">{{ number_format($item['amount'])}}</p>
+                                <p class="text-sm text-gray-500">{{ number_format($item->transaction->sum('amount'))}}</p>
                             </div>
                         @endif
                         <a href="{{route('donasi.detail', ['campaign' => $item['id']])}}" class="flex mt-4 justify-center w-full bg-gray-50 border border-gray-400 text-center py-3 rounded-lg">Donasi</a>

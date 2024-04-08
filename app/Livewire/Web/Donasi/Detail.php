@@ -109,7 +109,7 @@ class Detail extends Component implements HasForms, HasActions
 
     public function message(?string $name)
     {
-        $message['text'] = sprintf('*%s telah mengirim untuk program %s di %s*',$name, $this->campaign->title, url('/'))
+        $message['text'] = sprintf('*%s telah mengirim untuk program %s di %s*', $name, $this->campaign->title, url('/'))
             . PHP_EOL
             . PHP_EOL;
 
@@ -131,7 +131,15 @@ class Detail extends Component implements HasForms, HasActions
     public function render()
     {
         return view('livewire.web.donasi.detail', [
-            'donasi' => $this->campaign
+            'donasi' => $this->campaign,
+            'details' => DonasiTransaction::where('campaign_id', $this->campaign->id)
+                ->where('paid', 1)
+                ->latest()
+                ->take(30)
+                ->get(),
+            'total_amount' => DonasiTransaction::where('campaign_id', $this->campaign->id)
+                ->where('paid', 1)
+                ->sum('amount')
         ])
             ->title($this->campaign->title);
     }

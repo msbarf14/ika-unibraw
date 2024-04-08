@@ -26,7 +26,7 @@ class Campaign extends Model
         'display_amount'  => 'boolean',
     ];
 
-    public function campaign() : HasMany
+    public function transaction() : HasMany
     {
         return $this->hasMany(Transaction::class, 'campaign_id', 'id');
     }
