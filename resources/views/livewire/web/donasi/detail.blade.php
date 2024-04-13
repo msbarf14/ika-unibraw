@@ -33,12 +33,19 @@
                 </div>
                 <div class=" col-span-3 ">
                     <div class="bg-brand-primary text-white py-8 px-10 rounded-lg">
-                        <div class="flex justify-between items-start">
+                        <div class="">
                             <div>
                                 <img src="{{asset('assets/bank_logo/mandiri.png')}}" alt="" class="w-[10rem]">
                             </div>
-                            <div class="pt-8">
-                                <h1 class="text-xl md:text-2xl font-bold">149 00 24092027</h1>
+                            <div class="pt-8 flex space-x-3 items-center">
+                                <h1 id="account-number" class="text-xl md:text-2xl font-bold">1490024092027</h1>
+                                <button class="p-2  bg-brand-secondary/30 focus:bg-blue-500 hover:bg-blue-500 rounded" 
+                                    onclick="copyToClipboard()"> 
+                                    <x-filament::icon
+                                        icon="carbon-copy"
+                                        class="w-5 h-5"
+                                    />
+                                </button>
                             </div>
                         </div>
                         <div>
@@ -50,11 +57,17 @@
                         <form wire:submit="create">
                            {{ $this->form }}
                            <button type="submit" @class([
-                            'inline-flex items-center mt-6 px-4 py-2 font-medium text-white border border-transparent rounded shadow-sm',
+                            'flex space-x-4 items-center mt-6 px-4 py-2 font-medium text-white border border-transparent rounded shadow-sm',
                             'focus:outline-none focus:ring-2 focus:ring-offset-2',
                             'bg-brand-blue hover:bg-brand-blue/80 focus:ring-brand-blue disabled:cursor-not-allowed',
-                        ])>
-                               Submit
+                        ]) wire:loading.class="opacity-50">
+                                <span>Submit</span>
+                                <div wire:loading>
+                                    <x-filament::icon
+                                        icon="heroicon-o-arrow-path"
+                                        class="w-5 h-5 animate-spin"
+                                    />
+                                </div>
                            </button>
                        </form>
                     </div>
@@ -75,3 +88,28 @@
         </div> 
     </div>
 </div>
+<script>
+     function copyToClipboard() {
+        var h1Element = document.getElementById('account-number');
+        
+        // Get its text content
+        var textToCopy = h1Element.textContent;
+        
+        // Create a temporary textarea element to copy the text
+        var textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        document.body.appendChild(textarea);
+        
+        // Select the text in the textarea
+        textarea.select();
+        
+        // Copy the selected text
+        document.execCommand('copy');
+        
+        // Remove the temporary textarea
+        document.body.removeChild(textarea);
+        
+        // Provide user feedback
+        alert('Text copied to clipboard: ' + textToCopy);
+    }
+</script>

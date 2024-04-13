@@ -78,6 +78,7 @@ class Detail extends Component implements HasForms, HasActions
     }
     public function create(): void
     {
+        
         $body = $this->form->getState();
         DB::beginTransaction();
         try {
@@ -93,8 +94,9 @@ class Detail extends Component implements HasForms, HasActions
             $this->message($body['name']);
             DB::commit();
             Notification::make()
-                ->title('Berahasil ! Terimakasih telah melakukan donasi.')
+                ->title('Berhasil ! Terimakasih telah melakukan donasi.')
                 ->success()
+                ->color('success')
                 ->send();
             $this->form->fill();
         } catch (\Throwable $th) {
