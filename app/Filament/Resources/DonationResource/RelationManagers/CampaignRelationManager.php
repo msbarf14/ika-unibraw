@@ -14,6 +14,7 @@ use Filament\Tables\Columns\Summarizers\Sum;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Contracts\View\View;
 
 class CampaignRelationManager extends RelationManager
 {
@@ -68,6 +69,12 @@ class CampaignRelationManager extends RelationManager
                 Tables\Actions\CreateAction::make(),
             ])
             ->actions([
+                Tables\Actions\Action::make('attachment')
+                    ->icon('carbon-document-attachment')
+                    ->modalContent(fn($record) => view('filament.pages.actions.campaign-attachment', ['record' => $record]))
+                    ->modalSubmitAction(false)
+                    ->modalCancelAction(false)
+                    ->closeModalByClickingAway(true),
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\Action::make('paid')
                         ->label('Mark As Paid')
