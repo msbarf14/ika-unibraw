@@ -60,7 +60,7 @@ return [
     |
     */
     'accepted_file_types' => ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml', 'application/pdf'],
-    'disk' => 'upcloud',
+    'disk' => 'minio',
     'directory' => 'images',
     'visibility' => 'public',
     'preserve_file_names' => false,

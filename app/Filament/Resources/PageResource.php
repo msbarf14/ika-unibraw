@@ -41,7 +41,7 @@ class PageResource extends Resource
                             ->preserveFilenames(),
                         // SpatieMediaLibraryFileUpload::make('documents')
                         //     ->multiple()
-                        //     ->disk('upcloud')
+                        //     ->disk('minio')
                         //     ->acceptedFileTypes([
                         //         'application/pdf',
                         //         'text/plain',

@@ -56,7 +56,7 @@ class SchemaResource extends Resource
                 Forms\Components\SpatieMediaLibraryFileUpload::make('header_image')
                     ->collection('header_image')
                     ->label('Header Image')
-                    ->disk('upcloud')
+                    ->disk('minio')
                     ->image()
                     ->imageEditor()
                     ->hidden(fn (Get $get) => $get('meta.using_layout'))
