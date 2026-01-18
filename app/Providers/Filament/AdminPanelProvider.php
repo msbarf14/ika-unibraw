@@ -74,9 +74,12 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarWidth('16rem')
             ->font('DM Sans')
             ->favicon(asset('favicon.png'))
-            ->brandLogo(new HtmlString(Blade::render(<<<'HTML'
-                <x-shared.logo class="h-full" />
-            HTML)))
+            ->brandLogo(new HtmlString(<<<HTML
+                <div class="flex items-center space-x-4">
+                    <img src="/logo_ika_brawijaya.png" alt="" class="w-auto h-10">
+                    <p class="text-sm font-semibold">IKATAN ALUMNI <br> UNIV. BRAWIJAYA</p>
+                </div>
+            HTML))
             ->brandLogoHeight('2rem')
             ->renderHook('panels::styles.before', fn (): string => Blade::render(<<<'HTML'
                 <style>
@@ -86,9 +89,7 @@ class AdminPanelProvider extends PanelProvider
                     }
                 </style>
             HTML))
-            ->renderHook('panels::resource.pages.list-records.table.after', fn (): string => Blade::render(<<<'HTML'
-                <x-modal-loading wire:loading wire:target="gotoPage,nextPage,previousPage,mountTableAction" />
-            HTML))
+            // ->renderHook('panels::resource.pages.list-records.table.after', fn (): string => view('components.modal-loading')->render())
             ->plugins([
                 \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
             ])
