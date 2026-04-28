@@ -23,8 +23,8 @@ class SchemaResource extends Resource
     protected static ?string $navigationIcon = 'carbon-data-1';
 
     protected static ?string $navigationGroup = 'Form';
+
     protected static bool $shouldRegisterNavigation = false;
-    
 
     public static function form(Form $form): Form
     {
@@ -78,9 +78,6 @@ class SchemaResource extends Resource
                         ]),
                     Forms\Components\Toggle::make('required'),
                     Forms\Components\Toggle::make('show-in-table'),
-                    Forms\Components\Toggle::make('otp')
-                        ->label('OTP')
-                        ->hidden(fn (Get $get) => ! in_array($get('type'), ['textinput:phone'])),
                     Forms\Components\Repeater::make('options')
                         ->schema([
                             Forms\Components\TextInput::make('value'),

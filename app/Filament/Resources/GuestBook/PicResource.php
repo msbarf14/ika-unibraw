@@ -4,23 +4,15 @@ namespace App\Filament\Resources\GuestBook;
 
 use App\Filament\Resources\GuestBook\PicResource\Pages;
 use App\Models\GuestBook\Pic;
-use Closure;
 use Filament\Forms;
-use Filament\Forms\Components\Actions\Action;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
-use Filament\Forms\Get;
-use Filament\Forms\Set;
-use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Kedeka\Whatsapp\Rules\OnWhatsApp;
+use Livewire\Attributes\Rule;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Ysfkaya\FilamentPhoneInput\Tables\PhoneInputColumn;
-use Kedeka\Whatsapp\Enums\MessageType;
-use Kedeka\Whatsapp\Rules\OnWhatsApp;
-use Kedeka\WhatsappOtp\Rules\Valid;
-use Livewire\Attributes\Rule;
 
 class PicResource extends Resource
 {
@@ -29,6 +21,7 @@ class PicResource extends Resource
     protected static ?string $navigationIcon = 'carbon-user-admin';
 
     protected static ?string $navigationGroup = 'Guest Books';
+
     protected static bool $shouldRegisterNavigation = false;
 
     #[Rule('required')]
@@ -40,25 +33,8 @@ class PicResource extends Resource
     #[Rule('required')]
     public $pesan = '';
 
-    public $otp = '';
-
-    public $timer = 0;
-
-    public $active = false;
-
-    public function getOtp($phone)
-    {
-        $timestamp = now()->toString();
-        // $validated = $this->validateOnly('phone');
-
-        $time = app(\Kedeka\WhatsappOtp\Ask::class)->otp($phone, $timestamp);
-        $this->active = true;
-        $this->timer = $time['timer'];
-    }
-
     public static function form(Form $form): Form
     {
-
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')

@@ -19,7 +19,7 @@
         "flowframe/laravel-trend": "^0.1.5",
         "guzzlehttp/guzzle": "^7.2",
         "joshembling/image-optimizer": "^1.5",
-        "kedeka/whatsapp-otp": "dev-main",
+        "kedeka/whatsapp-laravel": "dev-main",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
@@ -81,6 +81,9 @@
     },
     "config": {
         "optimize-autoloader": true,
+        "platform": {
+            "php": "8.3.0"
+        },
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {

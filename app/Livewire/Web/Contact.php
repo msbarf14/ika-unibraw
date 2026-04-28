@@ -9,7 +9,6 @@ use Filament\Notifications\Notification;
 use Illuminate\Support\Arr;
 use Kedeka\Whatsapp\Enums\MessageType;
 use Kedeka\Whatsapp\Rules\OnWhatsApp;
-use Kedeka\WhatsappOtp\Rules\Valid;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -24,18 +23,12 @@ class Contact extends Component
     #[Rule('required')]
     public $pesan = '';
 
-    public $otp = '';
-
-    public $timer = 0;
-
-    public $active = false;
-
-
     public function render()
     {
         $settings = Arr::undot(Setting::where('key', 'LIKE', 'social-media.%')->pluck('value', 'key'))['social-media'] ?? [];
+
         return view('livewire.web.contact', [
-            "social" => $settings
+            'social' => $settings,
         ]);
     }
 
@@ -43,9 +36,6 @@ class Contact extends Component
     {
         $validated = $this->validate();
         $phoneValidated = preg_replace('/[^0-9]/', '', $validated['phone']);
-        $otp = $this->validate([
-            'otp' => ['required', new Valid($phoneValidated, now()->toString())],
-        ], attributes: ['otp' => 'OTP']);
 
         $contact = Model::create([
             'name' => $validated['nama'],
@@ -98,15 +88,5 @@ class Contact extends Component
             ->color('success')
             ->success()
             ->send();
-    }
-
-    public function getOtp()
-    {
-        $timestamp = now()->toString();
-        $validated = $this->validateOnly('phone');
-
-        $time = app(\Kedeka\WhatsappOtp\Ask::class)->otp($validated['phone'], $timestamp);
-        $this->active = true;
-        $this->timer = $time['timer'];
     }
 }
