@@ -32,7 +32,7 @@ class CampaignRelationManager extends RelationManager
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('attachment')
                     ->required()
-                    ->disk('public')
+                    ->disk(config('filesystems.default'))
                     ->image()
                     ->directory('donation'),
                 NumberInput::make('amount')

@@ -25,7 +25,7 @@ class News extends Component
                 'id' => $post->ulid,
                 'slug' => $post->slug,
                 'title' => $post->title,
-                'content' => $post->content,
+                'content' => $post->public_content,
                 'tags' => $post->tags,
                 'image' => $post->img_url,
                 'published_at' => $post->published_at
@@ -39,7 +39,7 @@ class News extends Component
                 'id' => $post->ulid,
                 'slug' => $post->slug,
                 'title' => $post->title,
-                'content' => $post->content,
+                'content' => $post->public_content,
                 'tags' => $post->tags,
                 'image' => $post->img_url,
                 'published_at' => $post->published_at

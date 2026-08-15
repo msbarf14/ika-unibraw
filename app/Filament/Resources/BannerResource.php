@@ -24,7 +24,7 @@ class BannerResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('image')
-                    ->disk('public')
+                    ->disk(config('filesystems.default'))
                     ->directory('banner')
                     ->required()
                     ->maxSize(1000)

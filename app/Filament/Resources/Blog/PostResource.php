@@ -40,11 +40,11 @@ class PostResource extends Resource
                         Forms\Components\TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')
                             ->image()
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->collection('images')
                             ->preserveFilenames(),
                         TiptapEditor::make('content')
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->profile('simple'),
                     ])->columnSpan(4),
 

@@ -11,7 +11,7 @@ return [
     'otp' => [
         'timeout' => 2,
     ],
-    'default_footer' => fn () => ('*Ini adalah pesan otomatis, jangan membalas ke nomor ini*'
+    'default_footer' => ('*Ini adalah pesan otomatis, jangan membalas ke nomor ini*'
                 .PHP_EOL
                 .PHP_EOL.'jika ada pertanyaan silakan hubungi kontak varianiaga samarinda berikut'
                 .PHP_EOL.'082393379788 (Yayat)'

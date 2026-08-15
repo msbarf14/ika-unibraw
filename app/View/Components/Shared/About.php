@@ -4,6 +4,7 @@ namespace App\View\Components\Shared;
 
 use App\Models\Banner;
 use App\Models\Setting;
+use App\Support\StorageUrl;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
@@ -29,7 +30,7 @@ class About extends Component
                 $setting = Setting::where('key', 'LIKE', 'about.%')->pluck('value', 'key');
 
                 return [
-                    'message' => $setting['about.landing'] ?? null,
+                    'message' => StorageUrl::inHtml($setting['about.landing'] ?? null),
                 ];
             }),
             'banner' => Banner::where('location', '=', 'landing.banner2')->first()

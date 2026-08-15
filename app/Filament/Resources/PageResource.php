@@ -36,12 +36,12 @@ class PageResource extends Resource
                         Forms\Components\TextInput::make('slug'),
                         SpatieMediaLibraryFileUpload::make('image')
                             ->image()
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->collection('images')
                             ->preserveFilenames(),
                         // SpatieMediaLibraryFileUpload::make('documents')
                         //     ->multiple()
-                        //     ->disk('minio')
+                        //     ->disk(config('filesystems.default'))
                         //     ->acceptedFileTypes([
                         //         'application/pdf',
                         //         'text/plain',
@@ -54,7 +54,7 @@ class PageResource extends Resource
                         //     ->preserveFilenames(),
                         TiptapEditor::make('content')
                             ->profile('simple')
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->directory('pages'),
                     ])->columnSpan(4),
                     Forms\Components\Fieldset::make()->schema([

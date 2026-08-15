@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="mx-auto mt-8 prose prose-lg prose-p:text-justify text-gray-500 prose-indigo">
-                {!! $post->content !!}
+                {!! $post->public_content !!}
             </div>
         </div>
     </div>

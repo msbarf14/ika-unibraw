@@ -35,7 +35,7 @@ class DonationResource extends Resource
                     ->label('Thumbnail')
                     ->required()
                     ->image()
-                    ->disk('public')
+                    ->disk(config('filesystems.default'))
                     ->directory('images'),
                 Forms\Components\TextInput::make('title'),
                 NumberInput::make('amount')

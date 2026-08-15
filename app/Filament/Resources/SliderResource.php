@@ -43,10 +43,10 @@ class SliderResource extends Resource
                                 'external' => 'External',
                             ])->inline(),
                         SpatieMediaLibraryFileUpload::make('background')
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->collection('backgrounds'),
                         // SpatieMediaLibraryFileUpload::make('illustration')
-                        //     ->disk('public')
+                        //     ->disk(config('filesystems.default'))
                         //     ->collection('illustrations'),
                         Forms\Components\Textarea::make('description'),
                         // Forms\Components\Select::make('button_style')

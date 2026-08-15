@@ -4,6 +4,7 @@ namespace App\View\Components\Shared;
 
 use App\Models\Banner;
 use App\Models\Setting;
+use App\Support\StorageUrl;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
@@ -34,18 +35,17 @@ class Greeting extends Component
                 // ketua
                 $photoPath1 = $setting['greeting1.photo'] ?? '';
 
-                // $disk = Storage::disk('public')->exists($photoPath) ? 'public' : 'minio';
-                $storage = Storage::disk('public');
+                $storage = Storage::disk(config('filesystems.default'));
 
                 return [
                     'photo-penasehat' => $storage->url($photoPath),
                     'name-penasehat' => $setting['greeting.speaker'] ?? null,
                     'occupation-penasehat' => $setting['greeting.occupation'] ?? null,
-                    'message-penasehat' => $setting['greeting.message'] ?? null,
+                    'message-penasehat' => StorageUrl::inHtml($setting['greeting.message'] ?? null),
                     'photo-ketua' => $storage->url($photoPath1),
                     'name-ketua' => $setting['greeting1.speaker'] ?? null,
                     'occupation-ketua' => $setting['greeting1.occupation'] ?? null,
-                    'message-ketua' => $setting['greeting1.message'] ?? null,
+                    'message-ketua' => StorageUrl::inHtml($setting['greeting1.message'] ?? null),
                 ];
             }),
             'banner' => Banner::where('location', '=', 'landing.banner2')->first()

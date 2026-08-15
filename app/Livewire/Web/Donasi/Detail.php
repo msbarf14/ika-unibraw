@@ -67,7 +67,7 @@ class Detail extends Component implements HasForms, HasActions
                     ->label('Bukti Transfer')
                     ->image()
                     ->required()
-                    ->disk('public')
+                    ->disk(config('filesystems.default'))
                     ->directory('donasi_trasaction'),
                 Forms\Components\Textarea::make('message')
                     ->required()

@@ -96,9 +96,9 @@ class Setting extends Page implements HasForms
                     ->schema([
                         Forms\Components\Grid::make(3)->schema([
                             Forms\Components\FileUpload::make('greeting.photo')
-                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk('public')->delete($file))
+                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk(config('filesystems.default'))->delete($file))
                                 ->image()
-                                ->disk('public')
+                                ->disk(config('filesystems.default'))
                                 ->optimize('png')
                                 ->downloadable(),
                             Forms\Components\Group::make([
@@ -121,9 +121,9 @@ class Setting extends Page implements HasForms
                     ->schema([
                         Forms\Components\Grid::make(3)->schema([
                             Forms\Components\FileUpload::make('greeting1.photo')
-                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk('public')->delete($file))
+                                ->deleteUploadedFileUsing(fn ($file) => Storage::disk(config('filesystems.default'))->delete($file))
                                 ->image()
-                                ->disk('public')
+                                ->disk(config('filesystems.default'))
                                 ->optimize('png')
                                 ->downloadable(),
                             Forms\Components\Group::make([

@@ -1,7 +1,7 @@
 <div>
     @isset($banner)
         <div class="max-w-7xl px-10 xl:px-0 mx-auto py-4">
-            <img src="{{ env('APP_URL') . '/' . 'storage/' . $banner['image'] }}" alt="Ads Banner 01" class="w-full rounded-xl" loading="lazy">
+            <img src="{{ $banner->image_url }}" alt="Ads Banner 01" class="w-full rounded-xl" loading="lazy">
         </div>
     @endisset
     <div class="relative min-h-[40dvh]"

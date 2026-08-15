@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 use Spatie\EloquentSortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -31,4 +32,13 @@ class Partner extends Model implements HasMedia
         'address',
         'image',
     ];
+
+    public function imageUrl(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->image
+                ? Storage::disk(config('filesystems.default'))->url($this->image)
+                : null,
+        );
+    }
 }

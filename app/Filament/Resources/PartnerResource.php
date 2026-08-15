@@ -49,7 +49,7 @@ class PartnerResource extends Resource
                             ]),
 
                         Forms\Components\FileUpload::make('image')
-                            ->disk('public')
+                            ->disk(config('filesystems.default'))
                             ->image(),
 
                     ])->columnSpan(2),

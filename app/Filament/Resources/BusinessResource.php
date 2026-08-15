@@ -51,7 +51,7 @@ class BusinessResource extends Resource
 
                         SpatieMediaLibraryFileUpload::make('image')
                             ->image()
-                            ->disk('minio')
+                            ->disk(config('filesystems.default'))
                             ->collection('images')
                             ->preserveFilenames(),
 

@@ -19,7 +19,7 @@
                 @endif
             </div>
             <div class="mx-auto mt-6 prose prose-lg prose-p:text-justify leading-relaxed text-gray-500 prose-indigo">
-                {!! $page->content !!}
+                {!! $page->public_content !!}
             </div>
 
             @if (count($page->documents))

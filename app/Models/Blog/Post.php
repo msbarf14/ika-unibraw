@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Support\StorageUrl;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
@@ -66,6 +67,13 @@ class Post extends Model implements HasMedia
     {
         return Attribute::make(
             get: fn () => $this->getFirstMediaUrl('images')
+        );
+    }
+
+    public function publicContent(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => StorageUrl::inHtml($this->content),
         );
     }
 }
