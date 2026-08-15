@@ -2,20 +2,16 @@
 
 namespace App\Livewire\Web;
 
-use App\Jobs\SendMessage;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use App\Models\GuestBook\Entry;
-use App\Models\GuestBook\Pic;
 use Filament\Forms\Components\TextInput;
-use Kedeka\Whatsapp\Rules\OnWhatsApp;
 use Livewire\Component;
 use Filament\Forms;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Notifications\Notification;
 use Illuminate\Database\Eloquent\Model;
-use Kedeka\Whatsapp\Enums\MessageType;
 use Livewire\Attributes\Title;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
@@ -40,7 +36,7 @@ class BukuTamu extends Component implements HasForms
                     ->required(),
                 PhoneInput::make('phone')
                     ->required()->label("WhatsApp Number")
-                    ->separateDialCode()->rule(new OnWhatsApp)
+                    ->separateDialCode()
                     ->defaultCountry('ID'), // Default Number Indonesian
                 Forms\Components\Textarea::make('needs')
                     ->required()
@@ -100,27 +96,6 @@ class BukuTamu extends Component implements HasForms
 
         $this->form->fill([]);
 
-        $picId = $state["pic_id"];
-        $getPicWaNumber = Pic::find($picId)->phone;
-
-        SendMessage::dispatch(
-            $getPicWaNumber,
-            sprintf("Nama: *%s* (%s)"
-                . PHP_EOL
-                . PHP_EOL
-                . "Instansi: *%s*"
-                . PHP_EOL
-                . PHP_EOL
-                . "Tanggal: *%s Pukul %s*"
-                . PHP_EOL
-                . PHP_EOL
-                . "Keperluan:"
-                . PHP_EOL
-                . PHP_EOL
-                . "%s", $state["name"], $state["phone"], $state["agency"], $state["date"], $state["at"], $state["needs"]),
-            MessageType::Text,
-            // compact('phone', 'contact', 'name')
-        );
     }
 
     #[Title('Buku Tamu')]

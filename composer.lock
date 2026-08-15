@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a84f8758bdc2dea19bb5bf5c895bd4db",
+    "content-hash": "52948eee163080efe73af8eb16326916",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -3158,94 +3158,6 @@
                 }
             ],
             "time": "2025-10-19T21:18:50+00:00"
-        },
-        {
-            "name": "kedeka/whatsapp-laravel",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kedeka/whatsapp-laravel.git",
-                "reference": "9f1c522bda698136eafa89d6ed9867f3178b7356"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kedeka/whatsapp-laravel/zipball/9f1c522bda698136eafa89d6ed9867f3178b7356",
-                "reference": "9f1c522bda698136eafa89d6ed9867f3178b7356",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^7.4",
-                "illuminate/contracts": "^7.0|^8.0|^9.0|^10.0|^11.0",
-                "php": "^7.4|^8.0|^8.1|^8.2|^8.3",
-                "spatie/laravel-package-tools": "^1.9.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.8",
-                "nunomaduro/collision": "^4.0|^5.0|^6.0|^7.0|^8.0",
-                "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-laravel": "^1.1",
-                "phpunit/phpunit": "^9.5|^10.0|^11.0",
-                "spatie/laravel-ray": "^1.26"
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Kedeka\\Whatsapp\\ServiceProvider"
-                    ],
-                    "aliases": {
-                        "Whatsapp": "Kedeka\\Whatsapp\\Facades\\WhatsApp"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Kedeka\\Whatsapp\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Kedeka\\Whatsapp\\Tests\\": "tests"
-                }
-            },
-            "scripts": {
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test": [
-                    "vendor/bin/pest"
-                ],
-                "test-coverage": [
-                    "vendor/bin/pest --coverage"
-                ],
-                "format": [
-                    "vendor/bin/php-cs-fixer fix --allow-risky=yes"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rizky Hajar",
-                    "email": "riskihajar@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Whatsapp Laravel Package for Kedeka.com",
-            "homepage": "https://github.com/kedeka/whatsapp-laravel",
-            "keywords": [
-                "kedeka",
-                "laravel",
-                "whatsapp-laravel"
-            ],
-            "support": {
-                "source": "https://github.com/kedeka/whatsapp-laravel/tree/main",
-                "issues": "https://github.com/kedeka/whatsapp-laravel/issues"
-            },
-            "time": "2025-05-12T06:17:08+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -13851,9 +13763,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "kedeka/whatsapp-laravel": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

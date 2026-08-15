@@ -9,7 +9,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Kedeka\Whatsapp\Rules\OnWhatsApp;
 use Livewire\Attributes\Rule;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 use Ysfkaya\FilamentPhoneInput\Tables\PhoneInputColumn;
@@ -27,7 +26,7 @@ class PicResource extends Resource
     #[Rule('required')]
     public $nama = '';
 
-    #[Rule(['required', new OnWhatsApp])]
+    #[Rule('required')]
     public $phone = '';
 
     #[Rule('required')]
@@ -45,7 +44,6 @@ class PicResource extends Resource
                     ->label('WhatsApp Number')
                     ->separateDialCode()
                     ->required()
-                    ->rule(new OnWhatsApp)
                     ->defaultCountry('ID'),
             ])->columns(1);
     }
